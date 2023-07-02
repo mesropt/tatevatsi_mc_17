@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "home.apps.HomeConfig",
+    "examinations.apps.ExaminationsConfig",
+    "users.apps.UsersConfig",
+    "basket.apps.BasketConfig",
+    "doctors.apps.DoctorsConfig",
 ]
 
 MIDDLEWARE = [
