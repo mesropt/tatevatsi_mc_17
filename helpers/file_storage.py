@@ -1,5 +1,5 @@
-# def movie_images_storage(instance, filename):
-#     return f"movies/{instance.name}/{instance.year}/{filename}"
+def examination_images_storage(instance, filename):
+    return f"examinations/{instance.name}/{filename}"
 #
 #
 # def producer_images_storage(instance, filename):
