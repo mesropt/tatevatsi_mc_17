@@ -1,6 +1,10 @@
 from django.db import models
 
 
+class GenderChoices(models.TextChoices):
+    male = 'M', 'Male'
+    femail = 'F', 'Female'
+
 class MRIExaminationChoices(models.TextChoices):
     radiosurgery_stereotaxic_mri = 'MRI after radiosurgery or stereotaxic interventions', 'MRI after radiosurgery or stereotaxic interventions'
     breast_mri = 'Breast MRI', 'Breast MRI'
