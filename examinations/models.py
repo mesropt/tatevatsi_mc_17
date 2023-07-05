@@ -75,56 +75,76 @@ class Ultrasound(Examination):
 #
 # # INSTANCES:
 # # MRI instances:auth_user_user_permissions
-# mri_one_five = MagneticResonanceImaging()
-# mri_three = MagneticResonanceImaging()
-# mri_contrast_material = MagneticResonanceImaging()
-# mri_anesthesia = MagneticResonanceImaging()
-# mri_breast = MagneticResonanceImaging()
-# mri_heart_one_five = MagneticResonanceImaging()
-# mri_heart_three = MagneticResonanceImaging()
+# Spine MRI(1.5T) one part = MagneticResonanceImaging()
+# Spine MRI(3T) one part = MagneticResonanceImaging()
+# Brain MRI(1.5T) = MagneticResonanceImaging()
+# Brain MRI(3T) = MagneticResonanceImaging()
+# Breast MRI(1.5T) = MagneticResonanceImaging()
+# Breast MRI(3T) = MagneticResonanceImaging()
+# Joints MRI(1.5T) = MagneticResonanceImaging()
+# Joints MRI(3T) = MagneticResonanceImaging()
+# MRI of abdomen and retroperitoneal space(1.5T) = MagneticResonanceImaging()
+# MRI of abdomen and retroperitoneal space(3T) = MagneticResonanceImaging()
+# MRI of soft tissues (1.5T) = MagneticResonanceImaging()
+# MRI of soft tissues (3T) = MagneticResonanceImaging()
+# MRI of arteries and veins (1.5T) = MagneticResonanceImaging()
+# MRI of arteries and veins (3T) = MagneticResonanceImaging()
+# Contrast_material (1.5T) = MagneticResonanceImaging()
+# Contrast_material (3T) = MagneticResonanceImaging()
+
+
 #
 #
 # # ComputedTomography instances:
 # ct_computer_layering_polyorgan = ComputedTomography()
 # ct_use_of_contrast_material = ComputedTomography()
 # ct_one_system_brain = ComputedTomography()
-# ct_one_system = ComputedTomography()
 # ct_one_system_spine_bones = ComputedTomography()
 # ct_paranasal_sinuses = ComputedTomography()
-# ct_four_sections_with_ne_contrast = ComputedTomography()
-# ct_neuroperfusion = ComputedTomography()
-# ct_urological_examination_in_connection_with_nephrolithiasis_without_ne = ComputedTomography()
-# ct_angiography_head_neck = ComputedTomography()
 # ct_complex_angiography_lower_limb_vessels = ComputedTomography()
 # ct_one_system_chest = ComputedTomography()
 # ct_two_system_chest = ComputedTomography()
-# ct_three_system_chest = ComputedTomography()
-# ct_four_system_chest = ComputedTomography()
 # ct_dentition_upper_lower_jaws = ComputedTomography()
 # ct_abdominal_pelvic_urinary_tract_without_contrast = ComputedTomography()
 # ct_temporal_bones = ComputedTomography()
 # ct_one_system_anthography = ComputedTomography()
 # ct_two_system_anthography = ComputedTomography()
 # ct_three_system_anthography = ComputedTomography()
-# ct_complex_angiography_lower_limb_vessels_with_abdominal_aorta = ComputedTomography()
-# ct_complex_angiography_lower_limb_vessels_with_thoracic_abdominal_aorta = ComputedTomography()
 # ct_coronary_arteries_angiography = ComputedTomography()
-# ct_coronary_arteries_pulmonary_artery_thoracic_aorta = ComputedTomography()
-# ct_coronary_arteries_pulmonary_artery_thoracic_aorta = ComputedTomography()
 # ct_aortic_thoracic_abdominal = ComputedTomography()
 # ct_neck_brain_arteries = ComputedTomography()
-# ct_dentition_layered_examination = ComputedTomography()
 # ct_cardiac_angiography = ComputedTomography()
 # ct_additional_organ_system = ComputedTomography()
 #
 # # # XRay
-# # name = XRay()
+# Abdominal x-ray
+# Bone x-ray
+# Chest x-ray
+# Dental x-ray
+# Extremity x-ray
+# Joint x-ray
+# Spine x-ray
+# Lungs X-ray
+# Skull X-Ray
+# Hand X-Ray
+# Kidney, Ureter and Bladder X-Ray
+# Neck X-Ray
+# # # name = XRay()
 # # name = XRay()
 # #
 # # # Mammography
+# Mammography
 # # name = Mammography()
 # # name = Mammography()
 #
 # Ultrasound
-# ultra_two_joint_pneu_by_service_head = Ultrasound()
-# ultra_lymphatic_system_one_zone_by_service_head = Ultrasound()
+#     Heart and blood vessels, including the abdominal aorta and its major branches
+#     Liver
+#     Mammary glands
+#     Brain
+#     spleen
+#     Pelvic organs
+#     Internal organs
+#     kidneys
+#     Abdominal organs
+#     uterus, ovaries, and unborn child (fetus) in pregnant patients
