@@ -21,8 +21,8 @@ class Examination(models.Model, metaclass=ABCMeta):
     # year = models.IntegerField()
     # rate = models.FloatField(null=True, blank=True, validators=[validate_rate])
     # description = models.TextField()
-    # created_at = models.DateTimeField(auto_now_add=True)
-    # updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     # image = models.ImageField(null=True, blank=True, upload_to=movie_images_storage)
 
     # def __str__(self):
