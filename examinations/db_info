@@ -1,49 +1,57 @@
-
-
+MagneticResonanceImagingOneFiveTesla
 # INSTANCES:
-# MRI instances:auth_user_user_permissions
-Spine MRI(1.5T) one part = MagneticResonanceImaging()
-Spine MRI(3T) one part = MagneticResonanceImaging()
-Brain MRI(1.5T) = MagneticResonanceImaging()
-Brain MRI(3T) = MagneticResonanceImaging()
-Breast MRI(1.5T) = MagneticResonanceImaging()
-Breast MRI(3T) = MagneticResonanceImaging()
-Joints MRI(1.5T) = MagneticResonanceImaging()
-Joints MRI(3T) = MagneticResonanceImaging()
-MRI of abdomen and retroperitoneal space(1.5T) = MagneticResonanceImaging()
-MRI of abdomen and retroperitoneal space(3T) = MagneticResonanceImaging()
-MRI of soft tissues (1.5T) = MagneticResonanceImaging()
-MRI of soft tissues (3T) = MagneticResonanceImaging()
-MRI of arteries and veins (1.5T) = MagneticResonanceImaging()
-MRI of arteries and veins (3T) = MagneticResonanceImaging()
-Contrast_material (1.5T) = MagneticResonanceImaging()
-Contrast_material (3T) = MagneticResonanceImaging()
+
+Spine MRI(1.5T)
+Brain MRI(1.5T)
+Breast MRI(1.5T)
+Joints MRI(1.5T)
+MRI of soft tissues (1.5T)
+MRI of arteries and veins (1.5T)
+MRI of abdomen and retroperitoneal space(1.5T)
+Contrast_material (1.5T)
+
+
+MagneticResonanceImagingThreeTesla
+# INSTANCES:
+
+Spine MRI(3T)
+Brain MRI(3T)
+Breast MRI(3T)
+Joints MRI(3T)
+MRI of abdomen and retroperitoneal space(3T)
+MRI of soft tissues (3T)
+MRI of arteries and veins (3T)
+Contrast_material (3T)
 
 
 
+ComputedTomography
+# INSTANCES:
 
-# ComputedTomography instances:
-ct_computer_layering_polyorgan = ComputedTomography()
-ct_use_of_contrast_material = ComputedTomography()
-ct_one_system_brain = ComputedTomography()
-ct_one_system_spine_bones = ComputedTomography()
-ct_paranasal_sinuses = ComputedTomography()
-ct_complex_angiography_lower_limb_vessels = ComputedTomography()
-ct_one_system_chest = ComputedTomography()
-ct_two_system_chest = ComputedTomography()
-ct_dentition_upper_lower_jaws = ComputedTomography()
-ct_abdominal_pelvic_urinary_tract_without_contrast = ComputedTomography()
-ct_temporal_bones = ComputedTomography()
-ct_one_system_anthography = ComputedTomography()
-ct_two_system_anthography = ComputedTomography()
-ct_three_system_anthography = ComputedTomography()
-ct_coronary_arteries_angiography = ComputedTomography()
-ct_aortic_thoracic_abdominal = ComputedTomography()
-ct_neck_brain_arteries = ComputedTomography()
-ct_cardiac_angiography = ComputedTomography()
-ct_additional_organ_system = ComputedTomography()
+ct_computer_layering_polyorgan
+ct_use_of_contrast_material
+ct_one_system_brain
+ct_one_system_spine_bones
+ct_paranasal_sinuses
+ct_complex_angiography_lower_limb_vessels
+ct_one_system_chest
+ct_two_system_chest
+ct_dentition_upper_lower_jaws
+ct_abdominal_pelvic_urinary_tract_without_contrast
+ct_temporal_bones
+ct_one_system_anthography
+ct_two_system_anthography
+ct_three_system_anthography
+ct_coronary_arteries_angiography
+ct_aortic_thoracic_abdominal
+ct_neck_brain_arteries
+ct_cardiac_angiography
+ct_additional_organ_system
 
-# # XRay
+
+ XRay
+# INSTANCES:
+
 Abdominal x-ray
 Bone x-ray
 Chest x-ray
@@ -56,15 +64,17 @@ Skull X-Ray
 Hand X-Ray
 Kidney, Ureter and Bladder X-Ray
 Neck X-Ray
-# # name = XRay()
-# name = XRay()
-#
-# # Mammography
-Mammography
-# name = Mammography()
-# name = Mammography()
+
+ Mammography
+ # INSTANCES:
+
+Screening Mammography
+Diagnostic Mammography
+
 
 Ultrasound
+# INSTANCES:
+
     Heart and blood vessels, including the abdominal aorta and its major branches
     Liver
     Mammary glands

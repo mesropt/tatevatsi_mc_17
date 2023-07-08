@@ -9,12 +9,13 @@ class DoctorAdmin(admin.ModelAdmin):
     fieldsets = (('Doctor', {'fields': ('first_name', 'last_name', 'gender',
                                         'seniority', 'scientific_degree',
                                         'date_of_birth', 'image')}),
-                ('MagneticResonanceImaging', {'fields': ('magnetic_resonance_imaging',)}),
+                ('MagneticResonanceImagingOneFiveTesla', {'fields': ('magnetic_resonance_imaging_1_5t',)}),
+                 ('MagneticResonanceImagingThreeTesla', {'fields': ('magnetic_resonance_imaging_3t',)}),
                  ('ComputedTomography', {'fields': ('computed_tomography',)}),
                  ('XRay', {'fields': ('xray',)}),
                  ('Mammography', {'fields': ('mammography',)}),
                  ('Ultrasound', {'fields': ('ultrasound',)}))
-    filter_horizontal = ('magnetic_resonance_imaging', 'computed_tomography', 'computed_tomography', 'xray', 'mammography', 'ultrasound',)
+    filter_horizontal = ('magnetic_resonance_imaging_1_5t', 'magnetic_resonance_imaging_3t', 'computed_tomography', 'computed_tomography', 'xray', 'mammography', 'ultrasound',)
 
 
 admin.site.register(Doctor, DoctorAdmin)

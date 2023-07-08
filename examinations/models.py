@@ -33,14 +33,19 @@ class Doctor(models.Model):
 
 
 # SUBCLASSES:
-class MagneticResonanceImaging(Examination):
-    doctor = models.ManyToManyField(Doctor, related_name='magnetic_resonance_imaging', blank=True, null=True)
+class MagneticResonanceImagingThreeTesla(Examination):
+    doctor = models.ManyToManyField(Doctor, related_name='magnetic_resonance_imaging_3t', blank=True, null=True)
 
     class Meta:
-        verbose_name = 'Magnetic Resonance Imaging'
-        verbose_name_plural = 'Magnetic Resonance Imagings'
+        verbose_name = 'Magnetic Resonance Imaging (3 Tesla)'
+        verbose_name_plural = 'Magnetic Resonance Imagings (3 Tesla)'
 
+class MagneticResonanceImagingOneFiveTesla(Examination):
+    doctor = models.ManyToManyField(Doctor, related_name='magnetic_resonance_imaging_1_5t', blank=True, null=True)
 
+    class Meta:
+        verbose_name = 'Magnetic Resonance Imaging (1.5 Tesla)'
+        verbose_name_plural = 'Magnetic Resonance Imagings (1.5 Tesla)'
 
 class ComputedTomography(Examination):
     doctor = models.ManyToManyField(Doctor, related_name='computed_tomography', blank=True, null=True)
@@ -70,6 +75,5 @@ class Ultrasound(Examination):
     doctor = models.ManyToManyField(Doctor, related_name='ultrasound', blank=True, null=True)
 
     class Meta:
-        verbose_name = 'Ultrasound'
         verbose_name = 'Ultrasound'
         verbose_name_plural = 'Ultrasounds'
