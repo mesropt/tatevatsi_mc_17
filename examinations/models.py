@@ -4,6 +4,10 @@ from helpers.file_storage import examination_images_storage
 
 # ABSTRACT CLASS:
 class Examination(models.Model):
+
+    class Meta:
+        abstract = True
+
     name = models.CharField(max_length=255)
     description = models.TextField(null=True, blank=True)
     doctor = models.ManyToManyField('Doctor', related_name='examinations', null=True, blank=True)
@@ -12,10 +16,7 @@ class Examination(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     price = models.FloatField(null=True, blank=True)
 
-    class Meta:
-        abstract = True
-
-    @abstractmethod
+    # @abstractmethod
     def __str__(self):
         return self.name
 
@@ -70,61 +71,5 @@ class Ultrasound(Examination):
 
     class Meta:
         verbose_name = 'Ultrasound'
+        verbose_name = 'Ultrasound'
         verbose_name_plural = 'Ultrasounds'
-
-#
-# # INSTANCES:
-# # MRI instances:auth_user_user_permissions
-# mri_one_five = MagneticResonanceImaging()
-# mri_three = MagneticResonanceImaging()
-# mri_contrast_material = MagneticResonanceImaging()
-# mri_anesthesia = MagneticResonanceImaging()
-# mri_breast = MagneticResonanceImaging()
-# mri_heart_one_five = MagneticResonanceImaging()
-# mri_heart_three = MagneticResonanceImaging()
-#
-#
-# # ComputedTomography instances:
-# ct_computer_layering_polyorgan = ComputedTomography()
-# ct_use_of_contrast_material = ComputedTomography()
-# ct_one_system_brain = ComputedTomography()
-# ct_one_system = ComputedTomography()
-# ct_one_system_spine_bones = ComputedTomography()
-# ct_paranasal_sinuses = ComputedTomography()
-# ct_four_sections_with_ne_contrast = ComputedTomography()
-# ct_neuroperfusion = ComputedTomography()
-# ct_urological_examination_in_connection_with_nephrolithiasis_without_ne = ComputedTomography()
-# ct_angiography_head_neck = ComputedTomography()
-# ct_complex_angiography_lower_limb_vessels = ComputedTomography()
-# ct_one_system_chest = ComputedTomography()
-# ct_two_system_chest = ComputedTomography()
-# ct_three_system_chest = ComputedTomography()
-# ct_four_system_chest = ComputedTomography()
-# ct_dentition_upper_lower_jaws = ComputedTomography()
-# ct_abdominal_pelvic_urinary_tract_without_contrast = ComputedTomography()
-# ct_temporal_bones = ComputedTomography()
-# ct_one_system_anthography = ComputedTomography()
-# ct_two_system_anthography = ComputedTomography()
-# ct_three_system_anthography = ComputedTomography()
-# ct_complex_angiography_lower_limb_vessels_with_abdominal_aorta = ComputedTomography()
-# ct_complex_angiography_lower_limb_vessels_with_thoracic_abdominal_aorta = ComputedTomography()
-# ct_coronary_arteries_angiography = ComputedTomography()
-# ct_coronary_arteries_pulmonary_artery_thoracic_aorta = ComputedTomography()
-# ct_coronary_arteries_pulmonary_artery_thoracic_aorta = ComputedTomography()
-# ct_aortic_thoracic_abdominal = ComputedTomography()
-# ct_neck_brain_arteries = ComputedTomography()
-# ct_dentition_layered_examination = ComputedTomography()
-# ct_cardiac_angiography = ComputedTomography()
-# ct_additional_organ_system = ComputedTomography()
-#
-# # # XRay
-# # name = XRay()
-# # name = XRay()
-# #
-# # # Mammography
-# # name = Mammography()
-# # name = Mammography()
-#
-# Ultrasound
-# ultra_two_joint_pneu_by_service_head = Ultrasound()
-# ultra_lymphatic_system_one_zone_by_service_head = Ultrasound()

@@ -1,7 +1,9 @@
 from django.db import models
 from helpers.choices import GenderChoices
 from helpers.file_storage import doctor_image_storage
-from examinations.models import Examination, MagneticResonanceImaging, ComputedTomography, XRay, Mammography, Ultrasound
+from examinations.models import (Examination, MagneticResonanceImaging,
+                                 ComputedTomography, XRay,
+                                 Mammography, Ultrasound)
 
 class Doctor(models.Model):
     # Examinations:
