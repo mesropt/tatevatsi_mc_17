@@ -71,3 +71,5 @@ class Ultrasound(Examination):
 
     class Meta:
         verbose_name = 'Ultrasound'
+        verbose_name = 'Ultrasound'
+        verbose_name_plural = 'Ultrasounds'
