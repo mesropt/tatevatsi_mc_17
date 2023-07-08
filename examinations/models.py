@@ -69,7 +69,7 @@ class Mammography(Examination):
     class Meta:
         verbose_name = 'Mammography'
         verbose_name_plural = 'Mammographies'
-
+z
 
 class Ultrasound(Examination):
     doctor = models.ManyToManyField(Doctor, related_name='ultrasound', blank=True, null=True)
