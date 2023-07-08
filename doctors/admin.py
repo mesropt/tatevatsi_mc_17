@@ -14,7 +14,7 @@ class DoctorAdmin(admin.ModelAdmin):
                  ('XRay', {'fields': ('xray',)}),
                  ('Mammography', {'fields': ('mammography',)}),
                  ('Ultrasound', {'fields': ('ultrasound',)}))
-    filter_horizontal = ('magnetic_resonance_imaging', 'computed_tomography', 'computed_tomography', 'xray', 'mammography', 'ultrasound',)
+    filter_horizontal = ('computed_tomography', 'computed_tomography', 'xray', 'mammography', 'ultrasound',)
 
 
 admin.site.register(Doctor, DoctorAdmin)
