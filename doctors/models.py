@@ -1,13 +1,15 @@
 from django.db import models
 from helpers.choices import GenderChoices
 from helpers.file_storage import doctor_image_storage
-from examinations.models import (Examination, MagneticResonanceImaging,
-                                 ComputedTomography, XRay,
+from examinations.models import (Examination, MagneticResonanceImagingThreeTesla,
+                                  MagneticResonanceImagingOneFiveTesla,
+                                  ComputedTomography, XRay,
                                  Mammography, Ultrasound)
 
 class Doctor(models.Model):
     # Examinations:
-    magnetic_resonance_imaging = models.ManyToManyField(MagneticResonanceImaging, related_name='magnetic_resonance_imaging', blank=True, null=True)
+    magnetic_resonance_imaging_1_5t = models.ManyToManyField(MagneticResonanceImagingOneFiveTesla, related_name='magnetic_resonance_imaging_1_5t', blank=True, null=True)
+    magnetic_resonance_imaging_3t = models.ManyToManyField(MagneticResonanceImagingThreeTesla, related_name='magnetic_resonance_imaging_3t', blank=True, null=True)
     computed_tomography = models.ManyToManyField(ComputedTomography, related_name='computed_tomography', blank=True, null=True)
     xray = models.ManyToManyField(XRay, related_name='xray', blank=True, null=True)
     mammography = models.ManyToManyField(Mammography, related_name='mammography', blank=True, null=True)

@@ -1,14 +1,19 @@
 from django.contrib import admin
-from examinations.models import (MagneticResonanceImaging,
+from examinations.models import (MagneticResonanceImagingOneFiveTesla, MagneticResonanceImagingThreeTesla,
                                  ComputedTomography, XRay, Mammography,
                                  Ultrasound)
 
-class MagneticResonanceImagingAdmin(admin.ModelAdmin):
+class MagneticResonanceImagingOneFiveTeslaAdmin(admin.ModelAdmin):
     list_display = ('name', 'price')
     list_filter = ('price',)
     search_fields = ('name', 'price')
     filter_horizontal = ('doctor',)
 
+class MagneticResonanceImagingThreeTeslaAdmin(admin.ModelAdmin):
+    list_display = ('name', 'price')
+    list_filter = ('price',)
+    search_fields = ('name', 'price')
+    filter_horizontal = ('doctor',)
 
 class ComputedTomographyAdmin(admin.ModelAdmin):
     list_display = ('name', 'price')
@@ -38,7 +43,8 @@ class UltrasoundAdmin(admin.ModelAdmin):
     filter_horizontal = ('doctor',)
 
 
-admin.site.register(MagneticResonanceImaging, MagneticResonanceImagingAdmin)
+admin.site.register(MagneticResonanceImagingOneFiveTesla, MagneticResonanceImagingOneFiveTeslaAdmin)
+admin.site.register(MagneticResonanceImagingThreeTesla, MagneticResonanceImagingThreeTeslaAdmin)
 admin.site.register(ComputedTomography, ComputedTomographyAdmin)
 admin.site.register(XRay, XRayAdmin)
 admin.site.register(Mammography, MammographyAdmin)

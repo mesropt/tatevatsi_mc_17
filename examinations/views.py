@@ -1,16 +1,13 @@
 from django.shortcuts import render, redirect
 from django.views.generic.base import TemplateResponseMixin, ContextMixin, View
-from examinations.models import (Examination, MagneticResonanceImaging,
+from examinations.models import (Examination, MagneticResonanceImagingOneFiveTesla,
+                                 MagneticResonanceImagingThreeTesla,
                                  ComputedTomography, XRay,
                                  Mammography, Ultrasound)
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView, DetailView
 
-
-class ExaminationDetailView(DetailView):
-    model = Examination
-    template_name = 'examination/detail.html'
 
 class ExaminationDetailView(DetailView):
     model = Examination
