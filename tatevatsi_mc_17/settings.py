@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "users.apps.UsersConfig",
     "basket.apps.BasketConfig",
     "doctors.apps.DoctorsConfig",
+    "sass_processor",
 ]
 
 MIDDLEWARE = [
