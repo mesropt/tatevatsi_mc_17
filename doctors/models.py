@@ -6,6 +6,7 @@ from examinations.models import (Examination, MagneticResonanceImagingThreeTesla
                                   ComputedTomography, XRay,
                                  Mammography, Ultrasound)
 
+
 class Doctor(models.Model):
     # Examinations:
     magnetic_resonance_imaging_1_5t = models.ManyToManyField(MagneticResonanceImagingOneFiveTesla, related_name='magnetic_resonance_imaging_1_5t', blank=True, null=True)
