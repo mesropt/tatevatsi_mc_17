@@ -27,6 +27,7 @@ class Doctor(models.Model):
     # Other:
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
+    specialization = models.CharField(max_length=255, default='')
     seniority = models.IntegerField(null=True, blank=True, help_text='(years)')
     scientific_degree = models.CharField(max_length=255, null=True, blank=True)
     date_of_birth = models.DateField(null=True, blank=True)
