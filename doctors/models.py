@@ -6,6 +6,16 @@ from examinations.models import (Examination, MagneticResonanceImagingThreeTesla
                                   ComputedTomography, XRay,
                                  Mammography, Ultrasound)
 
+class Equipment(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Equipment'
+        verbose_name_plural = 'Equipments'
+
 class Doctor(models.Model):
     # Examinations:
     magnetic_resonance_imaging_1_5t = models.ManyToManyField(MagneticResonanceImagingOneFiveTesla, related_name='magnetic_resonance_imaging_1_5t', blank=True, null=True)
@@ -17,6 +27,7 @@ class Doctor(models.Model):
     # Other:
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
+    specialization = models.CharField(max_length=255, default='')
     seniority = models.IntegerField(null=True, blank=True, help_text='(years)')
     scientific_degree = models.CharField(max_length=255, null=True, blank=True)
     date_of_birth = models.DateField(null=True, blank=True)
