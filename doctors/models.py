@@ -5,7 +5,6 @@ from examinations.models import (Examination, MagneticResonanceImagingThreeTesla
                                   MagneticResonanceImagingOneFiveTesla,
                                   ComputedTomography, XRay,
                                  Mammography, Ultrasound)
-from equipment.models import Equipment
 
 class Equipment(models.Model):
     name = models.CharField(max_length=100)
