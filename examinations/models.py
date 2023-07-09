@@ -77,3 +77,11 @@ class Ultrasound(Examination):
     class Meta:
         verbose_name = 'Ultrasound'
         verbose_name_plural = 'Ultrasounds'
+
+
+class ECG(Examination):
+    doctor = models.ManyToManyField(Doctor, related_name='ecg', blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'Ultrasound'
+        verbose_name_plural = 'Ultrasounds'
