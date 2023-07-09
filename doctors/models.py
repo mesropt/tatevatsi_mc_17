@@ -6,16 +6,6 @@ from examinations.models import (Examination, MagneticResonanceImagingThreeTesla
                                   ComputedTomography, XRay,
                                  Mammography, Ultrasound)
 
-class Equipment(models.Model):
-    name = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name = 'Equipment'
-        verbose_name_plural = 'Equipments'
-
 class Doctor(models.Model):
     # Examinations:
     magnetic_resonance_imaging_1_5t = models.ManyToManyField(MagneticResonanceImagingOneFiveTesla, related_name='magnetic_resonance_imaging_1_5t', blank=True, null=True)
