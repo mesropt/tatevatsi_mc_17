@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     "users.apps.UsersConfig",
     "basket.apps.BasketConfig",
     "doctors.apps.DoctorsConfig",
-    "equipment.apps.EquipmentConfig",
     "sass_processor",
 ]
 
