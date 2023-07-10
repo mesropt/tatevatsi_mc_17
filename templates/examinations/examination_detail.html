@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content  %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
+
+                </div>
+                <div class="col-lg-7">
+                    <div class="mb-4">
+                        <h1 class="display-4">{{ examination.name }}{{ examination.description }}</h1>
+                    </div>
+                    <p>{% if examination.price %}{{ examination.price }}{% endif %}</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="javascript:history.back()" class="btn btn-primary mt-4">Back to the list of examinations</a>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+{% endblock  %}

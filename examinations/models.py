@@ -9,6 +9,7 @@ class Examination(models.Model):
         abstract = True
 
     name = models.CharField(max_length=255)
+    html_name = None
     description = models.TextField(null=True, blank=True)
     doctor = models.ManyToManyField('Doctor', related_name='examinations', null=True, blank=True)
     image = models.ImageField(null=True, blank=True, upload_to=examination_images_storage)
@@ -40,12 +41,16 @@ class MagneticResonanceImagingThreeTesla(Examination):
         verbose_name = 'Magnetic Resonance Imaging (3 Tesla)'
         verbose_name_plural = 'Magnetic Resonance Imagings (3 Tesla)'
 
+    html_name = 'MRI (3 tesla)'
+
 class MagneticResonanceImagingOneFiveTesla(Examination):
     doctor = models.ManyToManyField(Doctor, related_name='magnetic_resonance_imaging_1_5t', blank=True, null=True)
 
     class Meta:
         verbose_name = 'Magnetic Resonance Imaging (1.5 Tesla)'
         verbose_name_plural = 'Magnetic Resonance Imagings (1.5 Tesla)'
+
+    html_name = 'MRI (1.5 tesla)'
 
 class ComputedTomography(Examination):
     doctor = models.ManyToManyField(Doctor, related_name='computed_tomography', blank=True, null=True)
@@ -54,6 +59,7 @@ class ComputedTomography(Examination):
         verbose_name = 'Computed Tomography'
         verbose_name_plural = 'Computed Tomographies'
 
+    html_name = 'ComputedTomography'
 
 class XRay(Examination):
     doctor = models.ManyToManyField(Doctor, related_name='xray', blank=True, null=True)
@@ -62,6 +68,7 @@ class XRay(Examination):
         verbose_name = 'X-Ray'
         verbose_name_plural = 'X-Rays'
 
+    html_name = 'X-Ray'
 
 class Mammography(Examination):
     doctor = models.ManyToManyField(Doctor, related_name='mammography', blank=True, null=True)
@@ -70,6 +77,7 @@ class Mammography(Examination):
         verbose_name = 'Mammography'
         verbose_name_plural = 'Mammographies'
 
+    html_name = 'Mammography'
 
 class Ultrasound(Examination):
     doctor = models.ManyToManyField(Doctor, related_name='ultrasound', blank=True, null=True)
@@ -77,3 +85,5 @@ class Ultrasound(Examination):
     class Meta:
         verbose_name = 'Ultrasound'
         verbose_name_plural = 'Ultrasounds'
+
+    html_name = 'Ultrasound'

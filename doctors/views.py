@@ -16,15 +16,6 @@ class DoctorsListView(TemplateView):
         context['doctors_list'] = doctors
         return context
 
-# class DoctorDetailView(DetailView):
-#     model = Doctor
-#     template_name = 'doctors/doctor_detail.html'
-# #
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         doctor = get_object_or_404(Doctor, pk=pk)
-#         return context
-
 
 class DoctorDetailView(DetailView):
     model = Doctor
@@ -33,23 +24,3 @@ class DoctorDetailView(DetailView):
     def get_object(self, queryset=None):
         pk = self.kwargs.get(self.pk_url_kwarg)
         return get_object_or_404(Doctor, pk=pk)
-
-# class DoctorAddView(DetailView):
-#     model = Doctor
-#     template_name = 'examination/detail.html'
-#
-#
-# class DoctorUpdateView(DetailView):
-#     model = Doctor
-#     template_name = 'examination/detail.html'
-#
-#
-# class DoctorDeleteView(DetailView):
-#     model = Doctor
-#     template_name = 'examination/detail.html'
-
-
-# def actor_detail(request, pk):
-#     actor = get_object_or_404(Actor, pk=pk)
-#     return render(request, 'actor/detail.html', {'actor': actor})
-
