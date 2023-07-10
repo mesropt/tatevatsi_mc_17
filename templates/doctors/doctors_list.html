@@ -13,7 +13,7 @@
             <div class="text-center mx-auto mb-5" style="max-width: 500px;">
                 <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Find A Doctor</h5>
                 <h1 class="display-4 mb-4">Find A Healthcare Professionals</h1>
-                <h5 class="fw-normal">Find information about the doctor of Grigor Tatevatsi MC you are interested in</h5>
+                <h5 class="fw-normal">Find information about the doctor of Grigor Tatevatsi MC you are interested in:</h5>
             </div>
             <div class="mx-auto" style="width: 100%; max-width: 600px;">
                 <div class="input-group">
@@ -51,13 +51,10 @@
                             <div class="mt-auto p-4">
                                 <h3>{{ doctor.first_name }} {{ doctor.last_name }}</h3>
                                 <h6 class="fw-normal fst-italic text-primary mb-4">{% if doctor.seniority %}{{ doctor.specialization }}{% endif %}</h6>
-                                <p class="m-0">{% if doctor.seniority %}Seniority: {{ doctor.seniority }}{% endif %}<br>{% if doctor.scientific_degree %}Scientific degree: {{ doctor.scientific_degree }}{% endif %}</p>
-
+                                <p class="m-0">{% if doctor.seniority %}Seniority: {{ doctor.seniority }} years{% endif %}<br>{% if doctor.scientific_degree %}Scientific degree: {{ doctor.scientific_degree }}{% endif %}</p>
                             </div>
                             <div class="d-flex mt-auto border-top p-4">
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-3" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-3" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded-circle" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="{% url 'doctors:detail' doctor.pk %}" class="btn btn-primary">Detailed</a>
                             </div>
                         </div>
                     </div>

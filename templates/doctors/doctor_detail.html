@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content  %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100 rounded" src="{% if doctor.image %}{{ doctor.image.url }}{% endif %}" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="mb-4">
+                        <h1 class="display-4">Dr. {{ doctor.first_name }} {{ doctor.last_name }}</h1>
+                        <h6 class="fw-normal fst-italic text-primary mb-4">{% if doctor.seniority %}{{ doctor.specialization }}{% endif %}</h6>
+                    </div>
+                    <p>
+                        {% if doctor.date_of_birth %}{{ doctor.first_name }} {{ doctor.last_name }} was born in {{ doctor.date_of_birth }}.<br>{% endif %}
+                        {% if doctor.university and doctor.university != '' %}Graduated from {{ doctor.university }}.<br>{% endif %}
+                        {% if doctor.seniority %}Engaged in medical practice for over {{ doctor.seniority }} years.<br>{% endif %}
+                        {% if doctor.scientific_degree %}Has a {{ doctor.scientific_degree }} degree.<br>{% endif %}
+
+                        {% if doctor.magnetic_resonance_imaging_1_5t or doctor.magnetic_resonance_imaging_3t or doctor.computed_tomography or doctor.xray or doctor.mammography or doctor.ultrasound%}<br>Examinations performed by the doctor:{% endif %}
+                        {% if doctor.magnetic_resonance_imaging_1_5t %}{{ doctor.magnetic_resonance_imaging_1_5t }}{% endif %}
+                        {% if doctor.magnetic_resonance_imaging_3t %}{{ doctor.magnetic_resonance_imaging_3t }}{% endif %}
+                        {% if doctor.computed_tomography %}{{ doctor.computed_tomography }}{% endif %}
+                        {% if doctor.xray %}{{ doctor.xray }}{% endif %}
+                        {% if doctor.mammography %}{{ doctor.mammography }}{% endif %}
+                        {% if doctor.ultrasound %}{{ doctor.ultrasound }}{% endif %}
+                        {{ doctor.ultrasound.ultrasound }}
+                    </p>
+
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="javascript:history.back()" class="btn btn-primary mt-4">Back to the list of doctors</a>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+{% endblock  %}

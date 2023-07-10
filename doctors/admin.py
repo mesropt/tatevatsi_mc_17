@@ -8,7 +8,7 @@ class DoctorAdmin(admin.ModelAdmin):
     search_fields = ('first_name', 'last_name')
     # fields = ['doctors']
     fieldsets = (('Doctor', {'fields': ('first_name', 'last_name', 'gender',
-                                        'seniority', 'specialization','scientific_degree',
+                                        'seniority', 'specialization','scientific_degree', 'university',
                                         'date_of_birth', 'image')}),
                 ('MagneticResonanceImagingOneFiveTesla', {'fields': ('magnetic_resonance_imaging_1_5t',)}),
                  ('MagneticResonanceImagingThreeTesla', {'fields': ('magnetic_resonance_imaging_3t',)}),
