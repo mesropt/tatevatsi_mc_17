@@ -1,3 +1,4 @@
+from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView, DetailView
 from django.core.paginator import Paginator
 from doctors.models import Doctor
@@ -15,18 +16,24 @@ class DoctorsListView(TemplateView):
         context['doctors_list'] = doctors
         return context
 
-# def doctors_list(request):
-#     doctors = Doctor.objects.all().order_by('-pk')
-#     paginator = Paginator(doctors, 4)  # Show 25 contacts per page.
-#     page_number = request.GET.get("page")
-#     doctors = paginator.get_page(page_number)
-#     return render(request, 'doctors/doctors_list.html', {'doctors_list': doctors})
-
 # class DoctorDetailView(DetailView):
 #     model = Doctor
-#     template_name = 'examination/detail.html'
-#
-#
+#     template_name = 'doctors/doctor_detail.html'
+# #
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         doctor = get_object_or_404(Doctor, pk=pk)
+#         return context
+
+
+class DoctorDetailView(DetailView):
+    model = Doctor
+    template_name = 'doctors/doctor_detail.html'
+
+    def get_object(self, queryset=None):
+        pk = self.kwargs.get(self.pk_url_kwarg)
+        return get_object_or_404(Doctor, pk=pk)
+
 # class DoctorAddView(DetailView):
 #     model = Doctor
 #     template_name = 'examination/detail.html'
@@ -40,3 +47,9 @@ class DoctorsListView(TemplateView):
 # class DoctorDeleteView(DetailView):
 #     model = Doctor
 #     template_name = 'examination/detail.html'
+
+
+# def actor_detail(request, pk):
+#     actor = get_object_or_404(Actor, pk=pk)
+#     return render(request, 'actor/detail.html', {'actor': actor})
+
