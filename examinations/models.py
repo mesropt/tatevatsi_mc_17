@@ -10,6 +10,7 @@ class Examination(models.Model):
 
     name = models.CharField(max_length=255)
     html_name = None
+    readable_name = models.CharField(max_length=255, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     doctor = models.ManyToManyField('Doctor', related_name='examinations', null=True, blank=True)
     image = models.ImageField(null=True, blank=True, upload_to=examination_images_storage)
@@ -41,7 +42,7 @@ class MagneticResonanceImagingThreeTesla(Examination):
         verbose_name = 'Magnetic Resonance Imaging (3 Tesla)'
         verbose_name_plural = 'Magnetic Resonance Imagings (3 Tesla)'
 
-    html_name = 'MRI (3 tesla)'
+    html_name = 'MRI 3T'
 
 class MagneticResonanceImagingOneFiveTesla(Examination):
     doctor = models.ManyToManyField(Doctor, related_name='magnetic_resonance_imaging_1_5t', blank=True, null=True)
@@ -50,7 +51,7 @@ class MagneticResonanceImagingOneFiveTesla(Examination):
         verbose_name = 'Magnetic Resonance Imaging (1.5 Tesla)'
         verbose_name_plural = 'Magnetic Resonance Imagings (1.5 Tesla)'
 
-    html_name = 'MRI (1.5 tesla)'
+    html_name = 'MRI 1.5T'
 
 class ComputedTomography(Examination):
     doctor = models.ManyToManyField(Doctor, related_name='computed_tomography', blank=True, null=True)
@@ -59,7 +60,7 @@ class ComputedTomography(Examination):
         verbose_name = 'Computed Tomography'
         verbose_name_plural = 'Computed Tomographies'
 
-    html_name = 'ComputedTomography'
+    html_name = 'Computed Tomography'
 
 class XRay(Examination):
     doctor = models.ManyToManyField(Doctor, related_name='xray', blank=True, null=True)

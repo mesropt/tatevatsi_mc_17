@@ -24,15 +24,6 @@
                         {% if doctor.university and doctor.university != '' %}Graduated from {{ doctor.university }}.<br>{% endif %}
                         {% if doctor.seniority %}Engaged in medical practice for over {{ doctor.seniority }} years.<br>{% endif %}
                         {% if doctor.scientific_degree %}Has a {{ doctor.scientific_degree }} degree.<br>{% endif %}
-
-                        {% if doctor.magnetic_resonance_imaging_1_5t or doctor.magnetic_resonance_imaging_3t or doctor.computed_tomography or doctor.xray or doctor.mammography or doctor.ultrasound%}<br>Examinations performed by the doctor:{% endif %}
-                        {% if doctor.magnetic_resonance_imaging_1_5t %}{{ doctor.magnetic_resonance_imaging_1_5t }}{% endif %}
-                        {% if doctor.magnetic_resonance_imaging_3t %}{{ doctor.magnetic_resonance_imaging_3t }}{% endif %}
-                        {% if doctor.computed_tomography %}{{ doctor.computed_tomography }}{% endif %}
-                        {% if doctor.xray %}{{ doctor.xray }}{% endif %}
-                        {% if doctor.mammography %}{{ doctor.mammography }}{% endif %}
-                        {% if doctor.ultrasound %}{{ doctor.ultrasound }}{% endif %}
-                        {{ doctor.ultrasound.ultrasound }}
                     </p>
 
                 </div>
