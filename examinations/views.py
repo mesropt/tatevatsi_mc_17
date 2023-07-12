@@ -17,6 +17,21 @@ class ExaminationsListView(TemplateView):
         examinations_three_tesla = MagneticResonanceImagingThreeTesla.objects.all()
         context['examinations_three_tesla'] = examinations_three_tesla
 
+        examinations_one_five_tesla = MagneticResonanceImagingOneFiveTesla.objects.all()
+        context['examinations_one_five_tesla'] = examinations_one_five_tesla
+
+        examinations_computed_tomography = ComputedTomography.objects.all()
+        context['examinations_computed_tomography'] = examinations_computed_tomography
+
+        examinations_xray = XRay.objects.all()
+        context['examinations_xray'] = examinations_xray
+
+        examinations_mammography = Mammography.objects.all()
+        context['examinations_mammography'] = examinations_mammography
+
+        examinations_ultrasound = Ultrasound.objects.all()
+        context['examinations_ultrasound'] = examinations_ultrasound
+
         return context
 
 

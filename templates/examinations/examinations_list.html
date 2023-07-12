@@ -3,40 +3,113 @@
 
 {% block content %}
 
-    <!-- Search Start -->
-    <div class="container-fluid pt-5">
-        <!-- ... -->
-    </div>
-    <!-- Search End -->
-
-    <!-- Blog Start -->
-    <div class="container-fluid py-5">
-        <div class="container">
-            <div class="row g-1">
-                <h4 class="mb-3"></h4>
-                <div class="col-xl-20 mb-5">
-                    <div class="d-flex flex-column h-100">
-                        <div class="bg-light rounded overflow-hidden">
-<div class="p-1 text-center">
-    <a class="h3 d-block btn btn-primary me-2" href="{% url 'examinations:detail' examination_type='magnetic_resonance_imaging_three_tesla' pk=examinations_three_tesla.0.pk %}">
-        {{ examinations_three_tesla.0|get_class_name }}
-    </a>
+<!-- Search Start -->
+<div class="container-fluid pt-5">
+  <!-- ... -->
 </div>
-                            <div class="d-flex align-items-center">
-                                {% for examination in examinations_three_tesla %}
-                                    {% if forloop.first %}
-                                        {% include 'examinations/examination_type_block.html' with examination=examination %}
-                                    {% endif %}
-                                {% endfor %}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Blog End -->
+<!-- Search End -->
 
-    {% include 'layouts/pagination.html' with page_obj=examinations_three_tesla %}
+<!-- Blog Start -->
+<div class="container-fluid py-5">
+  <div class="container">
+    <div class="row g-1">
+      <h4 class="mb-3"></h4>
+      <div class="col-xl-20 mb-5">
+        <div class="d-flex flex-column h-100">
+          <div class="bg-light rounded overflow-hidden mb-4">
+            <div class="p-1 text-center">
+              <a class="h3 d-block btn btn-primary me-2" href="{% url 'examinations:detail' examination_type='magnetic_resonance_imaging_three_tesla' pk=examinations_three_tesla.0.pk %}">
+                {{ examinations_three_tesla.0|get_class_name }}
+              </a>
+            </div>
+            <div class="d-flex align-items-center">
+              {% for examination in examinations_three_tesla %}
+              {% if forloop.first %}
+              {% include 'examinations/examination_type_block.html' with examination=examination %}
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          <div class="bg-light rounded overflow-hidden">
+            <div class="p-1 text-center">
+              <a class="h3 d-block btn btn-primary me-5" href="{% url 'examinations:detail' examination_type='magnetic_resonance_imaging_one_five_tesla' pk=examinations_one_five_tesla.0.pk %}">
+                {{ examinations_one_five_tesla.0|get_class_name }}
+              </a>
+            </div>
+            <div class="d-flex align-items-center">
+              {% for examination in examinations_one_five_tesla %}
+              {% if forloop.first %}
+              {% include 'examinations/examination_type_block.html' with examination=examination %}
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="bg-light rounded overflow-hidden mb-4">
+            <div class="p-1 text-center">
+              <a class="h3 d-block btn btn-primary me-2" href="{% url 'examinations:detail' examination_type='computed_tomography' pk=examinations_computed_tomography.0.pk %}">
+                {{ examinations_computed_tomography.0|get_class_name }}
+              </a>
+            </div>
+            <div class="d-flex align-items-center">
+              {% for examination in examinations_three_tesla %}
+              {% if forloop.first %}
+              {% include 'examinations/examination_type_block.html' with examination=examination %}
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          <div class="bg-light rounded overflow-hidden">
+            <div class="p-1 text-center">
+              <a class="h3 d-block btn btn-primary me-5" href="{% url 'examinations:detail' examination_type='xray' pk=examinations_xray.0.pk %}">
+                {{ examinations_xray.0|get_class_name }}
+              </a>
+            </div>
+            <div class="d-flex align-items-center">
+              {% for examination in examinations_one_five_tesla %}
+              {% if forloop.first %}
+              {% include 'examinations/examination_type_block.html' with examination=examination %}
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="bg-light rounded overflow-hidden mb-4">
+            <div class="p-1 text-center">
+              <a class="h3 d-block btn btn-primary me-2" href="{% url 'examinations:detail' examination_type='mammography' pk=examinations_mammography.0.pk %}">
+                {{ examinations_mammography.0|get_class_name }}
+              </a>
+            </div>
+            <div class="d-flex align-items-center">
+              {% for examination in examinations_three_tesla %}
+              {% if forloop.first %}
+              {% include 'examinations/examination_type_block.html' with examination=examination %}
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          <div class="bg-light rounded overflow-hidden">
+            <div class="p-1 text-center">
+              <a class="h3 d-block btn btn-primary me-5" href="{% url 'examinations:detail' examination_type='ultrasound' pk=examinations_ultrasound.0.pk %}">
+                {{ examinations_ultrasound.0|get_class_name }}
+              </a>
+            </div>
+            <div class="d-flex align-items-center">
+              {% for examination in examinations_one_five_tesla %}
+              {% if forloop.first %}
+              {% include 'examinations/examination_type_block.html' with examination=examination %}
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Blog End -->
+
+{% include 'layouts/pagination.html' with page_obj=examinations_three_tesla %}
 
 {% endblock %}
