@@ -1,28 +1,29 @@
 from django import forms
+from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
-from phonenumber_field.formfields import PhoneNumberField
+
+User = get_user_model()
 
 
-class UserForm(UserCreationForm):
-    phone = PhoneNumberField()
+class EmailForm(forms.Form):
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+    subject = forms.CharField()
+    message = forms.CharField(widget=forms.Textarea())
+    to_email = forms.EmailField()
+
+    class Meta:
+        fields = '__all__'
+
+
+class RegistrationForm(UserCreationForm):
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
         self.fields['email'].required = True
+        self.fields['first_name'].required = True
+        self.fields['last_name'].required = True
 
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'email', 'phone', 'username',
-                  'password1', 'password2')
-
-
-class UserUpdateForm(forms.ModelForm):
-    phone = PhoneNumberField(required=False)
-    photo = forms.ImageField(required=False)
-
-    class Meta:
-        model = User
-        fields = ('first_name', 'last_name', 'email', 'username',
-                  'phone', 'photo')
-
+        fields = ('first_name', 'last_name', 'email', 'password1',
+                  'password2')

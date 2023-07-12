@@ -33,8 +33,8 @@
                 <div class="col-xl-20 mb-5">
                     <div class="d-flex flex-column h-100">
                         <div class="bg-light rounded overflow-hidden">
-                            <div class="p-3 text-center">
-                                <a class="h3 d-block mb-3 btn btn-primary me-2" href="{% url 'examinations:detail' examination_type='magnetic_resonance_imaging_three_tesla' pk=1 %}">{% if examination.name %}{{ examination.name }}{% endif %}</a>
+                            <div class="p-1 text-center">
+                                <a class="h3 d-block btn btn-primary me-2" href="{% url 'examinations:detail' examination_type='magnetic_resonance_imaging_three_tesla' pk=1 %}">{% if examination.name %}{{ examination.name }}{% endif %}</a>
                             </div>
                             <div class="d-flex align-items-center">
                                 {% include 'examinations/examination_type_block.html' %}
