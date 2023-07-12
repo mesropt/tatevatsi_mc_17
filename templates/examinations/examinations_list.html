@@ -25,77 +25,77 @@
             <div class="d-flex align-items-center">
               {% for examination in examinations_three_tesla %}
               {% if forloop.first %}
-                <!-- Examination Type Block Start -->
-                <div class="container-fluid py-5">
-                  <div class="container">
-                    <div class="row g-2">
-                      <h4 class="mb-3"></h4>
-                      {% for examination in examinations_three_tesla %}
-                      <div class="col-xl-20">
-                        <div class="d-flex flex-column h-100">
-                          <div class="d-flex justify-content-between border-top border-white border-5 p-2">
-                            <div class="bg-light rounded overflow-hidden flex-grow-1">
-                              <div class="p-3">
-                                <a class="h3 d-block mb-3" href="">
-                                  {% if examination.name %}{{ examination.name }}{% endif %}
-                                </a>
-                                <p class="m-0 description">{% if examination.description %}{{ examination.description }}{% endif %}</p>
-                              </div>
-                              <div class="d-flex justify-content-end align-items-center p-2">
-                                <a class="h5 d-block mb-0 me-2" href="">{% if examination.price %} {{ examination.price }} AMD {% else %} Check the current price by phone or email {% endif %}</a>
-                                <a href="{% url 'examinations:detail' examination_type='magnetic_resonance_imaging_three_tesla' pk=examination.pk %}" class="btn btn-primary me-2">Add to Basket</a>
-                              </div>
+              <!-- Examination Type Block Start -->
+              <div class="container-fluid py-5">
+                <div class="container">
+                  <div class="row g-2">
+                    <h4 class="mb-3"></h4>
+                    {% for examination in examinations_three_tesla %}
+                    <div class="col-xl-20">
+                      <div class="d-flex flex-column h-100">
+                        <div class="d-flex justify-content-between border-top border-white border-5 p-2">
+                          <div class="bg-light rounded overflow-hidden flex-grow-1">
+                            <div class="p-3">
+                              <a class="h3 d-block mb-3" href="">
+                                {% if examination.name %}{{ examination.name }}{% endif %}
+                              </a>
+                              <p class="m-0 description">{% if examination.description %}{{ examination.description }}{% endif %}</p>
+                            </div>
+                            <div class="d-flex justify-content-end align-items-center p-2">
+                              <a class="h5 d-block mb-0 me-2" href="">{% if examination.price %} {{ examination.price }} AMD {% else %} Check the current price by phone or email {% endif %}</a>
+                              <a href="{% url 'examinations:detail' examination_type='magnetic_resonance_imaging_three_tesla' pk=examination.pk %}" class="btn btn-primary me-2">Add to Basket</a>
                             </div>
                           </div>
                         </div>
                       </div>
-                      {% endfor %}
                     </div>
+                    {% endfor %}
                   </div>
                 </div>
-                <!-- Examination Type Block End -->
+              </div>
+              <!-- Examination Type Block End -->
               {% endif %}
               {% endfor %}
             </div>
           </div>
           <div class="bg-light rounded overflow-hidden">
             <div class="p-1 text-center">
-              <a class="h3 d-block btn btn-primary me-5" href="{% url 'examinations:detail' examination_type='magnetic_resonance_imaging_one_five_tesla' pk=examinations_one_five_tesla.0.pk %}">
+              <a class="h3 d-block btn btn-primary me-2" href="{% url 'examinations:detail' examination_type='magnetic_resonance_imaging_one_five_tesla' pk=examinations_one_five_tesla.0.pk %}">
                 {{ examinations_one_five_tesla.0|get_class_name }}
               </a>
             </div>
             <div class="d-flex align-items-center">
               {% for examination in examinations_one_five_tesla %}
               {% if forloop.first %}
-                <!-- Examination Type Block Start -->
-                <div class="container-fluid py-5">
-                  <div class="container">
-                    <div class="row g-2">
-                      <h4 class="mb-3"></h4>
-                      {% for examination in examinations_one_five_tesla %}
-                      <div class="col-xl-20">
-                        <div class="d-flex flex-column h-100">
-                          <div class="d-flex justify-content-between border-top border-white border-5 p-2">
-                            <div class="bg-light rounded overflow-hidden flex-grow-1">
-                              <div class="p-3">
-                                <a class="h3 d-block mb-3" href="">
-                                  {% if examination.name %}{{ examination.name }}{% endif %}
-                                </a>
-                                <p class="m-0 description">{% if examination.description %}{{ examination.description }}{% endif %}</p>
-                              </div>
-                              <div class="d-flex justify-content-end align-items-center p-2">
-                                <a class="h5 d-block mb-0 me-2" href="">{% if examination.price %} {{ examination.price }} AMD {% else %} Check the current price by phone or email {% endif %}</a>
-                                <a href="{% url 'examinations:detail' examination_type='magnetic_resonance_imaging_one_five_tesla' pk=examination.pk %}" class="btn btn-primary me-2">Add to Basket</a>
-                              </div>
+              <!-- Examination Type Block Start -->
+              <div class="container-fluid py-5">
+                <div class="container">
+                  <div class="row g-2">
+                    <h4 class="mb-3"></h4>
+                    {% for examination in examinations_one_five_tesla %}
+                    <div class="col-xl-20">
+                      <div class="d-flex flex-column h-100">
+                        <div class="d-flex justify-content-between border-top border-white border-5 p-2">
+                          <div class="bg-light rounded overflow-hidden flex-grow-1">
+                            <div class="p-3">
+                              <a class="h3 d-block mb-3" href="">
+                                {% if examination.name %}{{ examination.name }}{% endif %}
+                              </a>
+                              <p class="m-0 description">{% if examination.description %}{{ examination.description }}{% endif %}</p>
+                            </div>
+                            <div class="d-flex justify-content-end align-items-center p-2">
+                              <a class="h5 d-block mb-0 me-2" href="">{% if examination.price %} {{ examination.price }} AMD {% else %} Check the current price by phone or email {% endif %}</a>
+                              <a href="{% url 'examinations:detail' examination_type='magnetic_resonance_imaging_one_five_tesla' pk=examination.pk %}" class="btn btn-primary me-2">Add to Basket</a>
                             </div>
                           </div>
                         </div>
                       </div>
-                      {% endfor %}
                     </div>
+                    {% endfor %}
                   </div>
                 </div>
-                <!-- Examination Type Block End -->
+              </div>
+              <!-- Examination Type Block End -->
               {% endif %}
               {% endfor %}
             </div>
@@ -110,77 +110,77 @@
             <div class="d-flex align-items-center">
               {% for examination in examinations_computed_tomography %}
               {% if forloop.first %}
-                <!-- Examination Type Block Start -->
-                <div class="container-fluid py-5">
-                  <div class="container">
-                    <div class="row g-2">
-                      <h4 class="mb-3"></h4>
-                      {% for examination in examinations_computed_tomography %}
-                      <div class="col-xl-20">
-                        <div class="d-flex flex-column h-100">
-                          <div class="d-flex justify-content-between border-top border-white border-5 p-2">
-                            <div class="bg-light rounded overflow-hidden flex-grow-1">
-                              <div class="p-3">
-                                <a class="h3 d-block mb-3" href="">
-                                  {% if examination.name %}{{ examination.name }}{% endif %}
-                                </a>
-                                <p class="m-0 description">{% if examination.description %}{{ examination.description }}{% endif %}</p>
-                              </div>
-                              <div class="d-flex justify-content-end align-items-center p-2">
-                                <a class="h5 d-block mb-0 me-2" href="">{% if examination.price %} {{ examination.price }} AMD {% else %} Check the current price by phone or email {% endif %}</a>
-                                <a href="{% url 'examinations:detail' examination_type='computed_tomography' pk=examination.pk %}" class="btn btn-primary me-2">Add to Basket</a>
-                              </div>
+              <!-- Examination Type Block Start -->
+              <div class="container-fluid py-5">
+                <div class="container">
+                  <div class="row g-2">
+                    <h4 class="mb-3"></h4>
+                    {% for examination in examinations_computed_tomography %}
+                    <div class="col-xl-20">
+                      <div class="d-flex flex-column h-100">
+                        <div class="d-flex justify-content-between border-top border-white border-5 p-2">
+                          <div class="bg-light rounded overflow-hidden flex-grow-1">
+                            <div class="p-3">
+                              <a class="h3 d-block mb-3" href="">
+                                {% if examination.name %}{{ examination.name }}{% endif %}
+                              </a>
+                              <p class="m-0 description">{% if examination.description %}{{ examination.description }}{% endif %}</p>
+                            </div>
+                            <div class="d-flex justify-content-end align-items-center p-2">
+                              <a class="h5 d-block mb-0 me-2" href="">{% if examination.price %} {{ examination.price }} AMD {% else %} Check the current price by phone or email {% endif %}</a>
+                              <a href="{% url 'examinations:detail' examination_type='computed_tomography' pk=examination.pk %}" class="btn btn-primary me-2">Add to Basket</a>
                             </div>
                           </div>
                         </div>
                       </div>
-                      {% endfor %}
                     </div>
+                    {% endfor %}
                   </div>
                 </div>
-                <!-- Examination Type Block End -->
+              </div>
+              <!-- Examination Type Block End -->
               {% endif %}
               {% endfor %}
             </div>
           </div>
           <div class="bg-light rounded overflow-hidden">
             <div class="p-1 text-center">
-              <a class="h3 d-block btn btn-primary me-5" href="{% url 'examinations:detail' examination_type='xray' pk=examinations_xray.0.pk %}">
+              <a class="h3 d-block btn btn-primary me-2" href="{% url 'examinations:detail' examination_type='xray' pk=examinations_xray.0.pk %}">
                 {{ examinations_xray.0|get_class_name }}
               </a>
             </div>
             <div class="d-flex align-items-center">
               {% for examination in examinations_xray %}
               {% if forloop.first %}
-                <!-- Examination Type Block Start -->
-                <div class="container-fluid py-5">
-                  <div class="container">
-                    <div class="row g-2">
-                      <h4 class="mb-3"></h4>
-                      {% for examination in examinations_xray %}
-                      <div class="col-xl-20">
-                        <div class="d-flex flex-column h-100">
-                          <div class="d-flex justify-content-between border-top border-white border-5 p-2">
-                            <div class="bg-light rounded overflow-hidden flex-grow-1">
-                              <div class="p-3">
-                                <a class="h3 d-block mb-3" href="">
-                                  {% if examination.name %}{{ examination.name }}{% endif %}
-                                </a>
-                                <p class="m-0 description">{% if examination.description %}{{ examination.description }}{% endif %}</p>
-                              </div>
-                              <div class="d-flex justify-content-end align-items-center p-2">
-                                <a class="h5 d-block mb-0 me-2" href="">{% if examination.price %} {{ examination.price }} AMD {% else %} Check the current price by phone or email {% endif %}</a>
-                                <a href="{% url 'examinations:detail' examination_type='xray' pk=examination.pk %}" class="btn btn-primary me-2">Add to Basket</a>
-                              </div>
+              <!-- Examination Type Block Start -->
+              <div class="container-fluid py-5">
+                <div class="container">
+                  <div class="row g-2">
+                    <h4 class="mb-3"></h4>
+                    {% for examination in examinations_xray %}
+                    <div class="col-xl-20">
+                      <div class="d-flex flex-column h-100">
+                        <div class="d-flex justify-content-between border-top border-white border-5 p-2">
+                          <div class="bg-light rounded overflow-hidden flex-grow-1">
+                            <div class="p-3">
+                              <a class="h3 d-block mb-3" href="">
+                                {% if examination.name %}{{ examination.name }}{% endif %}
+                              </a>
+                              <p class="m-0 description">{% if examination.description %}{{ examination.description }}{% endif %}</p>
+                            </div>
+                            <div class="d-flex justify-content-end align-items-center p-2">
+                              <a class="h5 d-block mb-0 me-2" href="">{% if examination.price %} {{ examination.price }} AMD {% else %} Check the current price by phone or email {% endif %}</a>
+                              <a href="{% url 'examinations:detail' examination_type='xray' pk=examination.pk %}" class="btn btn-primary me-2">Add to Basket</a>
                             </div>
                           </div>
                         </div>
                       </div>
-                      {% endfor %}
                     </div>
+                    {% endfor %}
                   </div>
                 </div>
-                <!-- Examination Type Block End -->
+              </div>
+              <!-- Examination Type Block End -->
               {% endif %}
               {% endfor %}
             </div>
@@ -195,82 +195,81 @@
             <div class="d-flex align-items-center">
               {% for examination in examinations_mammography %}
               {% if forloop.first %}
-                <!-- Examination Type Block Start -->
-                <div class="container-fluid py-5">
-                  <div class="container">
-                    <div class="row g-2">
-                      <h4 class="mb-3"></h4>
-                      {% for examination in examinations_mammography %}
-                      <div class="col-xl-20">
-                        <div class="d-flex flex-column h-100">
-                          <div class="d-flex justify-content-between border-top border-white border-5 p-2">
-                            <div class="bg-light rounded overflow-hidden flex-grow-1">
-                              <div class="p-3">
-                                <a class="h3 d-block mb-3" href="">
-                                  {% if examination.name %}{{ examination.name }}{% endif %}
-                                </a>
-                                <p class="m-0 description">{% if examination.description %}{{ examination.description }}{% endif %}</p>
-                              </div>
-                              <div class="d-flex justify-content-end align-items-center p-2">
-                                <a class="h5 d-block mb-0 me-2" href="">{% if examination.price %} {{ examination.price }} AMD {% else %} Check the current price by phone or email {% endif %}</a>
-                                <a href="{% url 'examinations:detail' examination_type='mammography' pk=examination.pk %}" class="btn btn-primary me-2">Add to Basket</a>
-                              </div>
+              <!-- Examination Type Block Start -->
+              <div class="container-fluid py-5">
+                <div class="container">
+                  <div class="row g-2">
+                    <h4 class="mb-3"></h4>
+                    {% for examination in examinations_mammography %}
+                    <div class="col-xl-20">
+                      <div class="d-flex flex-column h-100">
+                        <div class="d-flex justify-content-between border-top border-white border-5 p-2">
+                          <div class="bg-light rounded overflow-hidden flex-grow-1">
+                            <div class="p-3">
+                              <a class="h3 d-block mb-3" href="">
+                                {% if examination.name %}{{ examination.name }}{% endif %}
+                              </a>
+                              <p class="m-0 description">{% if examination.description %}{{ examination.description }}{% endif %}</p>
+                            </div>
+                            <div class="d-flex justify-content-end align-items-center p-2">
+                              <a class="h5 d-block mb-0 me-2" href="">{% if examination.price %} {{ examination.price }} AMD {% else %} Check the current price by phone or email {% endif %}</a>
+                              <a href="{% url 'examinations:detail' examination_type='mammography' pk=examination.pk %}" class="btn btn-primary me-2">Add to Basket</a>
                             </div>
                           </div>
                         </div>
                       </div>
-                      {% endfor %}
                     </div>
+                    {% endfor %}
                   </div>
                 </div>
-                <!-- Examination Type Block End -->
+              </div>
+              <!-- Examination Type Block End -->
               {% endif %}
               {% endfor %}
             </div>
           </div>
           <div class="bg-light rounded overflow-hidden">
             <div class="p-1 text-center">
-              <a class="h3 d-block btn btn-primary me-5" href="{% url 'examinations:detail' examination_type='ultrasound' pk=examinations_ultrasound.0.pk %}">
+              <a class="h3 d-block btn btn-primary me-2" href="{% url 'examinations:detail' examination_type='ultrasound' pk=examinations_ultrasound.0.pk %}">
                 {{ examinations_ultrasound.0|get_class_name }}
               </a>
             </div>
             <div class="d-flex align-items-center">
               {% for examination in examinations_ultrasound %}
               {% if forloop.first %}
-                <!-- Examination Type Block Start -->
-                <div class="container-fluid py-5">
-                  <div class="container">
-                    <div class="row g-2">
-                      <h4 class="mb-3"></h4>
-                      {% for examination in examinations_ultrasound %}
-                      <div class="col-xl-20">
-                        <div class="d-flex flex-column h-100">
-                          <div class="d-flex justify-content-between border-top border-white border-5 p-2">
-                            <div class="bg-light rounded overflow-hidden flex-grow-1">
-                              <div class="p-3">
-                                <a class="h3 d-block mb-3" href="">
-                                  {% if examination.name %}{{ examination.name }}{% endif %}
-                                </a>
-                                <p class="m-0 description">{% if examination.description %}{{ examination.description }}{% endif %}</p>
-                              </div>
-                              <div class="d-flex justify-content-end align-items-center p-2">
-                                <a class="h5 d-block mb-0 me-2" href="">{% if examination.price %} {{ examination.price }} AMD {% else %} Check the current price by phone or email {% endif %}</a>
-                                <a href="{% url 'examinations:detail' examination_type='ultrasound' pk=examination.pk %}" class="btn btn-primary me-2">Add to Basket</a>
-                              </div>
+              <!-- Examination Type Block Start -->
+              <div class="container-fluid py-5">
+                <div class="container">
+                  <div class="row g-2">
+                    <h4 class="mb-3"></h4>
+                    {% for examination in examinations_ultrasound %}
+                    <div class="col-xl-20">
+                      <div class="d-flex flex-column h-100">
+                        <div class="d-flex justify-content-between border-top border-white border-5 p-2">
+                          <div class="bg-light rounded overflow-hidden flex-grow-1">
+                            <div class="p-3">
+                              <a class="h3 d-block mb-3" href="">
+                                {% if examination.name %}{{ examination.name }}{% endif %}
+                              </a>
+                              <p class="m-0 description">{% if examination.description %}{{ examination.description }}{% endif %}</p>
+                            </div>
+                            <div class="d-flex justify-content-end align-items-center p-2">
+                              <a class="h5 d-block mb-0 me-2" href="">{% if examination.price %} {{ examination.price }} AMD {% else %} Check the current price by phone or email {% endif %}</a>
+                              <a href="{% url 'examinations:detail' examination_type='ultrasound' pk=examination.pk %}" class="btn btn-primary me-2">Add to Basket</a>
                             </div>
                           </div>
                         </div>
                       </div>
-                      {% endfor %}
                     </div>
+                    {% endfor %}
                   </div>
                 </div>
-                <!-- Examination Type Block End -->
+              </div>
+              <!-- Examination Type Block End -->
               {% endif %}
               {% endfor %}
             </div>
           </div>
-
         </div>
       </div>
     </div>
