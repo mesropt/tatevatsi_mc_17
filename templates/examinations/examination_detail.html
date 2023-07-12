@@ -1,29 +1,37 @@
 {% extends 'base.html' %}
+{% load extras %}
 
 {% block content  %}
 
-<!DOCTYPE html>
-<html lang="en">
-
-    <!-- About Start -->
-    <div class="container-fluid py-5">
-        <div class="container">
-            <div class="row gx-5">
-                <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
-
-                </div>
-                <div class="col-lg-7">
-                    <div class="mb-4">
-                        <h1 class="display-4">{{ examination.name }}{{ examination.description }}</h1>
-                    </div>
-                    <p>{% if examination.price %}{{ examination.price }}{% endif %}</p>
+<!-- Examination Detail Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="row gx-5">
+            <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
+                <div class="position-relative h-100">
+                    <img class="position-absolute w-100 h-100 rounded" src="{% if examination.image %}{{ examination.image.url }}{% else %}/static/img/exam_default_img.svg{% endif %}" style="object-fit: cover;">
                 </div>
             </div>
-            <div class="text-center">
-                <a href="javascript:history.back()" class="btn btn-primary mt-4">Back to the list of examinations</a>
+            <div class="col-lg-7">
+                <div class="mb-4">
+                    <h1 class="display-4">{{ examination_list.0|get_class_name }}</h1>
+                </div>
+                <p>
+                    {% if examination.description %}{{ examination.description }}<br>{% endif %}
+                </p>
+                <ul>
+                    Types of {{ examination_list.0|get_class_name }} made in our clinic:
+                    {% for exam in examination_list %}
+                        <li>{{ exam.name }}</li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
+        <div class="text-center">
+            <a href="javascript:history.back()" class="btn btn-primary mt-4">Back to the list of examinations</a>
+        </div>
     </div>
-    <!-- About End -->
+</div>
+<!-- Examination Detail End -->
 
-{% endblock  %}
+{% endblock %}
