@@ -3,13 +3,13 @@
     <div class="container">
         <div class="row g-2">
             <h4 class="mb-3"></h4>
-            {% for examination in examinations_list %}
+            {% for examination in examinations_three_tesla %}
             <div class="col-xl-20">
                 <div class="d-flex flex-column h-100">
                     <div class="d-flex justify-content-between border-top border-white border-5 p-2">
                         <div class="bg-light rounded overflow-hidden flex-grow-1">
                             <div class="p-3">
-                                <a class="h3 d-block mb-3" href="{% url 'examinations:detail' examination_type='magnetic_resonance_imaging_three_tesla' pk=1 %}">
+                                <a class="h3 d-block mb-3" href="">
                                     {% if examination.name %}{{ examination.name }}{% endif %}
                                 </a>
                                 <p class="m-0 description">{% if examination.description %}{{ examination.description }}{% endif %}</p>

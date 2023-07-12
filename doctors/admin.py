@@ -9,13 +9,7 @@ class DoctorAdmin(admin.ModelAdmin):
     # fields = ['doctors']
     fieldsets = (('Doctor', {'fields': ('first_name', 'last_name', 'gender',
                                         'seniority', 'specialization','scientific_degree', 'university',
-                                        'date_of_birth', 'image')}),
-                ('MagneticResonanceImagingOneFiveTesla', {'fields': ('magnetic_resonance_imaging_1_5t',)}),
-                 ('MagneticResonanceImagingThreeTesla', {'fields': ('magnetic_resonance_imaging_3t',)}),
-                 ('ComputedTomography', {'fields': ('computed_tomography',)}),
-                 ('XRay', {'fields': ('xray',)}),
-                 ('Mammography', {'fields': ('mammography',)}),
-                 ('Ultrasound', {'fields': ('ultrasound',)}))
+                                        'date_of_birth', 'image')}),)
     filter_horizontal = ('magnetic_resonance_imaging_1_5t', 'magnetic_resonance_imaging_3t', 'computed_tomography', 'computed_tomography', 'xray', 'mammography', 'ultrasound',)
 
 

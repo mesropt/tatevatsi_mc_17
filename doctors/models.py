@@ -9,12 +9,12 @@ from examinations.models import (Examination, MagneticResonanceImagingThreeTesla
 
 class Doctor(models.Model):
     # Examinations:
-    magnetic_resonance_imaging_1_5t = models.ManyToManyField(MagneticResonanceImagingOneFiveTesla, related_name='magnetic_resonance_imaging_1_5t', blank=True, null=True)
-    magnetic_resonance_imaging_3t = models.ManyToManyField(MagneticResonanceImagingThreeTesla, related_name='magnetic_resonance_imaging_3t', blank=True, null=True)
-    computed_tomography = models.ManyToManyField(ComputedTomography, related_name='computed_tomography', blank=True, null=True)
-    xray = models.ManyToManyField(XRay, related_name='xray', blank=True, null=True)
-    mammography = models.ManyToManyField(Mammography, related_name='mammography', blank=True, null=True)
-    ultrasound = models.ManyToManyField(Ultrasound, related_name='ultrasound', blank=True, null=True)
+    magnetic_resonance_imaging_1_5t = models.ManyToManyField(MagneticResonanceImagingOneFiveTesla, related_name='doctor_1', blank=True, null=True)
+    magnetic_resonance_imaging_3t = models.ManyToManyField(MagneticResonanceImagingThreeTesla, related_name='doctor_1', blank=True, null=True)
+    computed_tomography = models.ManyToManyField(ComputedTomography, related_name='doctor_1', blank=True, null=True)
+    xray = models.ManyToManyField(XRay, related_name='doctor_1', blank=True, null=True)
+    mammography = models.ManyToManyField(Mammography, related_name='doctor_1', blank=True, null=True)
+    ultrasound = models.ManyToManyField(Ultrasound, related_name='doctor_1', blank=True, null=True)
     # Other:
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)

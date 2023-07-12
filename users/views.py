@@ -19,7 +19,7 @@ def register_user(request):
             user.profile.phone = phone
             user.profile.save()
             messages.success(request, f'User with {user.username} username created successfully')
-            return redirect('home')
+            return redirect('home:home')
     return render(request, 'users/register.html', {'form': form})
 
 
@@ -33,7 +33,7 @@ def login_view(request):
             next_url = request.GET.get('next')
             if next_url:
                 return redirect(next_url)
-            return redirect('home')
+            return redirect('home:home')
     return render(request, 'users/login.html', {})
 
 
@@ -41,7 +41,7 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     messages.info(request, 'Successfully loging out')
-    return redirect('home')
+    return redirect('home:home')
 
 
 class UserDetailView(DetailView):

@@ -14,22 +14,9 @@ class ExaminationsListView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        examinations = []
-        examinations.extend(MagneticResonanceImagingThreeTesla.objects.all())
-        examinations.extend(MagneticResonanceImagingOneFiveTesla.objects.all())
-        examinations.extend(ComputedTomography.objects.all())
-        examinations.extend(XRay.objects.all())
-        examinations.extend(Mammography.objects.all())
-        examinations.extend(Ultrasound.objects.all())
-        # Add more lines here for other subclasses of Examination
+        examinations_three_tesla = MagneticResonanceImagingThreeTesla.objects.all()
+        context['examinations_three_tesla'] = examinations_three_tesla
 
-        examinations.sort(key=lambda x: x.pk, reverse=True)
-
-        paginator = Paginator(examinations, self.paginate_by)
-        page_number = self.request.GET.get("page")
-        examinations = paginator.get_page(page_number)
-
-        context['examinations_list'] = examinations
         return context
 
 

@@ -1,26 +1,11 @@
 {% extends 'base.html' %}
+{% load extras %}
+
 {% block content %}
 
     <!-- Search Start -->
     <div class="container-fluid pt-5">
-        <div class="container">
-            <div class="text-center mx-auto mb-5" style="max-width: 500px;">
-                <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Find what you need</h5>
-                <h1 class="display-4">Our Examinations</h1>
-            </div>
-            <div class="mx-auto" style="width: 100%; max-width: 600px;">
-                <div class="input-group">
-                    <select class="form-select border-primary w-25" style="height: 60px;">
-                        <option selected>Department</option>
-                        <option value="1">Department 1</option>
-                        <option value="2">Department 2</option>
-                        <option value="3">Department 3</option>
-                    </select>
-                    <input type="text" class="form-control border-primary w-50" placeholder="Keyword">
-                    <button class="btn btn-dark border-0 w-25">Search</button>
-                </div>
-            </div>
-        </div>
+        <!-- ... -->
     </div>
     <!-- Search End -->
 
@@ -29,24 +14,29 @@
         <div class="container">
             <div class="row g-1">
                 <h4 class="mb-3"></h4>
-                {% for examination in examinations_list %}
                 <div class="col-xl-20 mb-5">
                     <div class="d-flex flex-column h-100">
                         <div class="bg-light rounded overflow-hidden">
-                            <div class="p-3 text-center">
-                                <a class="h3 d-block mb-3 btn btn-primary me-2" href="{% url 'examinations:detail' examination_type='magnetic_resonance_imaging_three_tesla' pk=1 %}">{% if examination.name %}{{ examination.name }}{% endif %}</a>
-                            </div>
+<div class="p-1 text-center">
+    <a class="h3 d-block btn btn-primary me-2" href="{% url 'examinations:detail' examination_type='magnetic_resonance_imaging_three_tesla' pk=examinations_three_tesla.0.pk %}">
+        {{ examinations_three_tesla.0|get_class_name }}
+    </a>
+</div>
                             <div class="d-flex align-items-center">
-                                {% include 'examinations/examination_type_block.html' %}
+                                {% for examination in examinations_three_tesla %}
+                                    {% if forloop.first %}
+                                        {% include 'examinations/examination_type_block.html' with examination=examination %}
+                                    {% endif %}
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
             </div>
         </div>
     </div>
     <!-- Blog End -->
-{% include 'layouts/pagination.html' with page_obj=examinations_list %}
+
+    {% include 'layouts/pagination.html' with page_obj=examinations_three_tesla %}
 
 {% endblock %}
