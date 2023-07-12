@@ -7,3 +7,8 @@ register = template.Library()
 @register.filter
 def get_class_name(instance):
     return instance.__class__.html_name
+
+
+@register.simple_tag
+def examination_type_section(examination_type, examinations):
+    return ''
