@@ -14,23 +14,15 @@ class ExaminationsListView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        examinations_three_tesla = MagneticResonanceImagingThreeTesla.objects.all()
-        context['examinations_three_tesla'] = examinations_three_tesla
-
-        examinations_one_five_tesla = MagneticResonanceImagingOneFiveTesla.objects.all()
-        context['examinations_one_five_tesla'] = examinations_one_five_tesla
-
-        examinations_computed_tomography = ComputedTomography.objects.all()
-        context['examinations_computed_tomography'] = examinations_computed_tomography
-
-        examinations_xray = XRay.objects.all()
-        context['examinations_xray'] = examinations_xray
-
-        examinations_mammography = Mammography.objects.all()
-        context['examinations_mammography'] = examinations_mammography
-
-        examinations_ultrasound = Ultrasound.objects.all()
-        context['examinations_ultrasound'] = examinations_ultrasound
+        examination_lists = {
+            'magnetic_resonance_imaging_three_tesla': MagneticResonanceImagingThreeTesla.objects.all(),
+            'magnetic_resonance_imaging_one_five_tesla': MagneticResonanceImagingOneFiveTesla.objects.all(),
+            'computed_tomography': ComputedTomography.objects.all(),
+            'xray': XRay.objects.all(),
+            'mammography': Mammography.objects.all(),
+            'ultrasound': Ultrasound.objects.all(),
+        }
+        context['examination_lists'] = examination_lists
 
         return context
 
