@@ -10,7 +10,6 @@ class Examination(models.Model):
 
     name = models.CharField(max_length=255)
     html_name = None
-    readable_name = models.CharField(max_length=255, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     doctor = models.ManyToManyField('Doctor', related_name='examinations', null=True, blank=True)
     image = models.ImageField(null=True, blank=True, upload_to=examination_images_storage)
