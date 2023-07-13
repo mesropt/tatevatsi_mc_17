@@ -26,64 +26,72 @@
     </div>
     <!-- Search End -->
 
-<!-- Examination List Start -->
-<div class="container-fluid py-5">
-  <div class="container">
-    <div class="row g-1">
-      <h4 class="mb-3"></h4>
+    <!-- Examination List Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row g-1">
+                <h4 class="mb-3"></h4>
 
-      {% for examination_type, examination_list in examination_lists.items %}
-        <div class="col-xl-20 mb-5">
-          <div class="d-flex flex-column h-100">
-            <div class="bg-light rounded overflow-hidden mb-4">
-              <div class="p-1 text-center">
-                <a class="h5 d-block btn btn-primary" href="{% url 'examinations:detail' examination_type=examination_type pk=examination_list.0.pk %}">
-                  {{ examination_list.0|get_class_name }}
-                </a>
-              </div>
-              <div class="d-flex align-items-center">
-                {% for examination in examination_list %}
-                {% if forloop.first %}
-                <!-- Examination Type Block Start -->
-                <div class="container-fluid">
-                  <div class="container">
-                    <div class="row">
-                      <h4 class="mb-1"></h4>
-                      {% for examination in examination_list %}
-                      <div class="col-xl-20">
-                        <div class="d-flex flex-column h-100">
-                          <div class="d-flex justify-content-between border-top border-white border-5 p-2">
-                            <div class="bg-light rounded overflow-hidden flex-grow-1">
-                              <div class="p-1">
-                                <a class="h3 d-block mb-3" href="">
-                                  {% if examination.name %}{{ examination.name }}{% endif %}
-                                </a>
-                                <p class="m-0 description">{% if examination.description %}{{ examination.description }}{% endif %}</p>
-                              </div>
-                              <div class="d-flex justify-content-end align-items-center p-2">
-                                <a class="h5 d-block mb-0 me-2" href="">{% if examination.price %} {{ examination.price }} AMD {% else %} Check the current price by phone or email {% endif %}</a>
-                                <a href="{% url 'examinations:detail' examination_type=examination_type pk=examination.pk %}" class="btn btn-primary me-2">Add to Basket</a>
-                              </div>
+                {% if examination_lists %}
+                    {% for examination_type, examination_list in examination_lists.items %}
+                        {% if examination_list %}
+                            <div class="col-xl-20 mb-5">
+                                <div class="d-flex flex-column h-100">
+                                    <div class="bg-light rounded overflow-hidden mb-4">
+                                        <div class="p-1 text-center">
+                                            <a class="h5 d-block btn btn-primary" href="{% url 'examinations:detail' examination_type=examination_type pk=examination_list.0.pk %}">
+                                                {{ examination_list.0|get_class_name }}
+                                            </a>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            {% for examination in examination_list %}
+                                                {% if forloop.first %}
+                                                    <!-- Examination Type Block Start -->
+                                                    <div class="container-fluid">
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <h4 class="mb-1"></h4>
+                                                                {% for examination in examination_list %}
+                                                                    <div class="col-xl-20">
+                                                                        <div class="d-flex flex-column h-100">
+                                                                            <div class="d-flex justify-content-between border-top border-white border-5 p-2">
+                                                                                <div class="bg-light rounded overflow-hidden flex-grow-1">
+                                                                                    <div class="p-1">
+                                                                                        <a class="h3 d-block mb-3" href="">
+                                                                                            {% if examination.name %}{{ examination.name }}{% endif %}
+                                                                                        </a>
+                                                                                        <p class="m-0 description">{% if examination.description %}{{ examination.description }}{% endif %}</p>
+                                                                                    </div>
+                                                                                    <div class="d-flex justify-content-end align-items-center p-2">
+                                                                                        <a class="h5 d-block mb-0 me-2" href="">
+                                                                                            {% if examination.price %} {{ examination.price }} AMD {% else %} Check the current price by phone or email {% endif %}
+                                                                                        </a>
+                                                                                        <a href="{% url 'examinations:detail' examination_type=examination_type pk=examination.pk %}" class="btn btn-primary me-2">Add to Basket</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endfor %}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Examination Type Block End -->
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
-                        </div>
-                      </div>
-                      {% endfor %}
-                    </div>
-                  </div>
-                </div>
-                <!-- Examination Type Block End -->
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
+                    <p>No examinations available at the moment.</p>
                 {% endif %}
-                {% endfor %}
-              </div>
-            </div>
-          </div>
-        </div>
-      {% endfor %}
 
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-<!-- Examination List End -->
+    <!-- Examination List End -->
 
 {% endblock %}
