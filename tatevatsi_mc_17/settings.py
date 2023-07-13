@@ -39,11 +39,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "home.apps.HomeConfig",
     "examinations.apps.ExaminationsConfig",
-    "users.apps.UsersConfig",
     "basket.apps.BasketConfig",
     "doctors.apps.DoctorsConfig",
-    "cart.apps.CartConfig",
     "sass_processor",
+    "authnapp.apps.AuthnappConfig",
 ]
 
 MIDDLEWARE = [
@@ -61,8 +60,7 @@ ROOT_URLCONF = "tatevatsi_mc_17.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / 'templates']
-        ,
+        "DIRS": [BASE_DIR / 'templates'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -108,6 +106,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+AUTH_USER_MODEL = 'authnapp.CustomUser'
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -123,7 +123,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]

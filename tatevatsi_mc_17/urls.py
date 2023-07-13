@@ -25,8 +25,8 @@ urlpatterns = [
     # path('basket/', include('basket.urls', namespace='basket')),
     # path('cart/', include('cart.urls', namespace='cart')),
     path('examinations/', include('examinations.urls', namespace='examinations')),
-    path('user/', include('users.urls', namespace='users')),
     path('doctors/', include('doctors.urls', namespace='doctors')),
+    path("auth/", include("authnapp.urls", namespace="auth")),
     path('', include('home.urls', namespace='home'))
 ]
 
