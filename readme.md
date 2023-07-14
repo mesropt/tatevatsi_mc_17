@@ -4,8 +4,8 @@ Educational project of a medical clinic, which was developed during training at 
 
 ## Stack
 
-* `Python` > 3.11
-* `Django` < 4.2.2
+* `Python`  3.11.4
+* `Django` 3.2.19
 
 ## License
 
