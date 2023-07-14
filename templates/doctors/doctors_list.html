@@ -2,6 +2,18 @@
 {% load extras %}
 
 {% block content %}
+
+<!-- Search Start -->
+<form method="GET" action="{% url 'doctors:list' %}">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" name="search_query" placeholder="Search doctors" value="{{ request.GET.search_query }}">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+</form>
+<!-- Search End -->
+
+    <!-- Search End -->
+
 <!-- Search Result Start -->
 <div class="container-fluid py-5">
   <div class="container">
