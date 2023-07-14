@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Your Basket</h1>
+    {% if basket.products.all %}
+        <ul>
+            {% for product in basket.products.all %}
+                <li>{{ product.examination.name }} - Quantity: {{ product.quantity }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Your basket is empty.</p>
+    {% endif %}
+{% endblock %}

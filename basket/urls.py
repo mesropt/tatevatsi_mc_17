@@ -1,8 +1,11 @@
 from django.urls import path
-from users import views
+import basket.views as basket
+from .apps import BasketConfig
 
-app_name = 'basket'
+app_name = BasketConfig.name
 
 urlpatterns = [
-    path('register/', views.register_user, name='register'),
+    path("", basket.basket, name="view"),
+    path("add/<int:pk>/", basket.basket_add, name="add"),
+    path("remove/<int:pk>/", basket.basket_remove, name="remove"),
 ]

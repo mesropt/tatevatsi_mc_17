@@ -244,3 +244,10 @@
     width: 150px;
     height: 150px;
 }
+
+
+.stretch-image {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}

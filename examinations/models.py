@@ -41,7 +41,7 @@ class MagneticResonanceImagingThreeTesla(Examination):
         verbose_name = 'Magnetic Resonance Imaging (3 Tesla)'
         verbose_name_plural = 'Magnetic Resonance Imagings (3 Tesla)'
 
-    html_name = 'MRI 3T'
+    user_friendly_name = 'MRI 3T'
 
 class MagneticResonanceImagingOneFiveTesla(Examination):
     doctor = models.ManyToManyField(Doctor, related_name='magnetic_resonance_imaging_1_5t', blank=True, null=True)
@@ -50,7 +50,7 @@ class MagneticResonanceImagingOneFiveTesla(Examination):
         verbose_name = 'Magnetic Resonance Imaging (1.5 Tesla)'
         verbose_name_plural = 'Magnetic Resonance Imagings (1.5 Tesla)'
 
-    html_name = 'MRI 1.5T'
+    user_friendly_name = 'MRI 1.5T'
 
 class ComputedTomography(Examination):
     doctor = models.ManyToManyField(Doctor, related_name='computed_tomography', blank=True, null=True)
@@ -59,7 +59,7 @@ class ComputedTomography(Examination):
         verbose_name = 'Computed Tomography'
         verbose_name_plural = 'Computed Tomographies'
 
-    html_name = 'Computed Tomography'
+    user_friendly_name = 'Computed Tomography'
 
 class XRay(Examination):
     doctor = models.ManyToManyField(Doctor, related_name='xray', blank=True, null=True)
@@ -68,7 +68,7 @@ class XRay(Examination):
         verbose_name = 'X-Ray'
         verbose_name_plural = 'X-Rays'
 
-    html_name = 'X-Ray'
+    user_friendly_name = 'X-Ray'
 
 class Mammography(Examination):
     doctor = models.ManyToManyField(Doctor, related_name='mammography', blank=True, null=True)
@@ -77,7 +77,7 @@ class Mammography(Examination):
         verbose_name = 'Mammography'
         verbose_name_plural = 'Mammographies'
 
-    html_name = 'Mammography'
+    user_friendly_name = 'Mammography'
 
 class Ultrasound(Examination):
     doctor = models.ManyToManyField(Doctor, related_name='ultrasound', blank=True, null=True)
@@ -86,4 +86,4 @@ class Ultrasound(Examination):
         verbose_name = 'Ultrasound'
         verbose_name_plural = 'Ultrasounds'
 
-    html_name = 'Ultrasound'
+    user_friendly_name = 'Ultrasound'
