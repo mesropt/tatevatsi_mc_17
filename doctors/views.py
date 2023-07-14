@@ -7,13 +7,14 @@ from doctors.forms import DoctorSearchForm
 from django.views.generic import TemplateView, ListView
 from django.db.models import Q
 
+
 class DoctorsListView(TemplateView):
     template_name = 'doctors/doctors_list.html'
     paginate_by = 4
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        doctors = Doctor.objects.all().order_by('-pk')
+        doctors = Doctor.objects.all().order_by('pk')
 
         # Search doctors
         search_query = self.request.GET.get('search_query')
