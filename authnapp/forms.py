@@ -27,15 +27,10 @@ class CustomUserRegisterForm(UserCreationForm):
             field.widget.attrs["class"] = "form-control"
             field.help_text = ""
 
-    def clean_age(self):
-        data = self.cleaned_data["age"]
-        if data < 18:
-            raise forms.ValidationError("You are too young.")
-        return data
 
     class Meta:
         model = CustomUser
-        fields = ("username", "first_name", "password1", "password2", "email", "age", "avatar")
+        fields = ("username", "first_name", "last_name", "password1", "password2", "email", "avatar")
 
 
 class CustomUserEditForm(UserChangeForm):
@@ -45,16 +40,10 @@ class CustomUserEditForm(UserChangeForm):
             field.widget.attrs["class"] = "form-control"
             field.help_text = ""
 
-    def clean_age(self):
-        data = self.cleaned_data["age"]
-        if data < 18:
-            raise forms.ValidationError("You are too young.")
-
-        return data
 
     class Meta:
         model = CustomUser
-        fields = ("username", "first_name", "email", "age", "avatar")
+        fields = ("username", "first_name", "email", "avatar")
 
 
 

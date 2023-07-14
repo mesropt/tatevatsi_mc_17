@@ -27,7 +27,8 @@ urlpatterns = [
     path('examinations/', include('examinations.urls', namespace='examinations')),
     path('doctors/', include('doctors.urls', namespace='doctors')),
     path("auth/", include("authnapp.urls", namespace="auth")),
-    path('', include('home.urls', namespace='home'))
+    path('', include('home.urls', namespace='home')),
+    path('accounts/', include('allauth.urls')),
 ]
 
 if settings.DEBUG:

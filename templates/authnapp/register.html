@@ -1,12 +1,18 @@
 {% extends 'base.html' %}
+{% load socialaccount %}
 
-{% block content  %}
-
-<form class="form-horizontal" action="{% url 'auth:register' %}" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ register_form.as_p }}
-    <br>
-    <input class="form-control" type="submit" value="зарегистрироваться">
-</form>
-
+{% block content %}
+<div class="container py-5">
+  <div class="row g-5">
+    <div class="col-md-6 offset-md-3">
+      <form class="form-horizontal" action="{% url 'auth:register' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ register_form.as_p }}
+        <br>
+        <input class="form-control" type="submit" value="Register">
+        <a href="{% provider_login_url 'google'%}?next=/" class="btn btn-primary">Register with Google</a>
+      </form>
+    </div>
+  </div>
+</div>
 {% endblock %}

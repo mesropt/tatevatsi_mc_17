@@ -2,16 +2,19 @@
 
 {% block content  %}
 
+<div class="container py-5">
+  <div class="row g-5">
+    <div class="col-md-6 offset-md-3">
 <form class="form-horizontal" action="{% url 'auth:login' %}" method="post">
     {% csrf_token %}
     {{ login_form.as_p }}
     <br>
-    <input class="form-control" type="submit" value="войти">
+    <input class="form-control" type="submit" value="Sign In">
 </form>
 <button class="btn btn-round form-control">
     <a href="{% url 'auth:register' %}" class="">
-        зарегистрироваться
+        Register
     </a>
 </button>
-
+    </div></div></div>
 {% endblock content %}
