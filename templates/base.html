@@ -71,44 +71,44 @@
     <!-- Topbar End -->
 
 
-    <!-- Navbar Start -->
-    <div class="container-fluid sticky-top bg-white shadow-sm">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
-                <a href="#" class="navbar-brand">
-                    <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-clinic-medical me-2"></i>Grigor Tatevatsi MC</h1>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0">
-                        <a href="{% url 'home:home' %}" class="nav-item nav-link active">Home</a>
-                        <a href="{% url 'home:contact' %}" class="nav-item nav-link">Contact</a>
-                        <a href="{% url 'home:about' %}" class="nav-item nav-link">About</a>
-                        <a href="{% url 'examinations:list' %}" class="nav-item nav-link">Examinations</a>
-                        <a href="{% url 'doctors:list' %}" class="nav-item nav-link">Doctors</a>
-                        {% if request.user.is_authenticated %}
-                            <li class="nav-item">
-                                <a href="{% url 'auth:profile' request.user.pk %}" class="nav-item nav-link">Profile</a>
-                            </li>
-                            <li class="nav-item">
-                            <a href="{% url 'auth:logout' %}" class="nav-item nav-link">Log Out</a>
+<!-- Navbar Start -->
+<div class="container-fluid sticky-top bg-white shadow-sm">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
+            <a href="#" class="navbar-brand">
+                <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-clinic-medical me-2"></i>Grigor Tatevatsi MC</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="{% url 'home:home' %}" class="nav-item nav-link {% if request.path == '/' %}active{% endif %}">Home</a>
+                    <a href="{% url 'home:contact' %}" class="nav-item nav-link {% if '/contact/' in request.path %}active{% endif %}">Contact</a>
+                    <a href="{% url 'home:about' %}" class="nav-item nav-link {% if '/about/' in request.path %}active{% endif %}">About</a>
+                    <a href="{% url 'examinations:list' %}" class="nav-item nav-link {% if '/examinations/' in request.path %}active{% endif %}">Examinations</a>
+                    <a href="{% url 'doctors:list' %}" class="nav-item nav-link {% if '/doctors/' in request.path %}active{% endif %}">Doctors</a>
+                    {% if request.user.is_authenticated %}
+                        <a href="{% url 'auth:profile' request.user.pk %}" class="nav-item nav-link {% if '/profile/' in request.path %}active{% endif %}">Profile</a>
+                        <li class="nav-item">
+                            <a href="{% url 'auth:logout' %}" class="nav-item nav-link {% if '/logout/' in request.path %}active{% endif %}">Log Out</a>
                         </li>
-                            {% else %}
-                            <li class="nav-item">
-                                <a href="{% url 'auth:register' %}" class="nav-item nav-link">Register</a>
-                            </li>
-                            <li class="nav-item" style="width: 65px;">
-                                <a href="{% url 'auth:login' %}" class="nav-item nav-link">Sign In</a>
-                            </li>
-                        {% endif %}
-                    </div>
+                    {% else %}
+                        <li class="nav-item">
+                            <a href="{% url 'auth:register' %}" class="nav-item nav-link {% if '/register/' in request.path %}active{% endif %}">Register</a>
+                        </li>
+                        <li class="nav-item"">
+                            <a href="{% url 'auth:login' %}" class="nav-item nav-link {% if '/login/' in request.path %}active{% endif %}">Sign In</a>
+                        </li>
+                    {% endif %}
                 </div>
-            </nav>
-        </div>
+            </div>
+        </nav>
     </div>
-    <!-- Navbar End -->
+</div>
+<!-- Navbar End -->
+
+
 
 {% block content %}
 
