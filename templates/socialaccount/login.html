@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load socialaccount static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>
+      .text-center {
+        text-align: center;
+        margin-top: 1cm;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 1cm;
+      }
+
+      .button-container .btn {
+        margin: 0 5px;
+      }
+
+      .signin-text {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="text-center">
+      <h1 style="margin-top: 0;">Sign In Via Google</h1>
+      <p class="signin-text">You are about to sign in using a third-party account from Google.</p>
+    </div>
+
+    <div class="button-container">
+      <a href="javascript:history.back()" class="btn btn-primary mt-4">Back</a>
+      <form method="post">
+        <input type="hidden" name="csrfmiddlewaretoken" value="UJECao9QNyRFQaEJ7HPVh2AJQBZAZuRIusE5T1xSAmaqWGQoWToBgMZ6EPN2MMzQ">
+        <button class="btn btn-primary mt-4" type="submit">Continue</button>
+      </form>
+    </div>
+  </body>
+</html>
+{% endblock content %}

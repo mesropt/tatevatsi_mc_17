@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load socialaccount %}
+{% load socialaccount static %}
 
 {% block content %}
 <div class="container py-5">
@@ -9,10 +9,17 @@
         {% csrf_token %}
         {{ register_form.as_p }}
         <br>
+
         <input class="form-control" type="submit" value="Register">
-        <a href="{% provider_login_url 'google'%}?next=/" class="btn btn-primary">Register with Google</a>
+
+        <div class="text-center"> <!-- Add a container div with "text-center" class -->
+          <a href="{% provider_login_url 'google'%}?next=/" class="btn btn-primary loginBtn loginBtn--google">Register with Google</a>
+        </div>
       </form>
     </div>
   </div>
 </div>
+
+<link href="{% static 'css/registration.css' %}" rel="stylesheet">
+
 {% endblock %}

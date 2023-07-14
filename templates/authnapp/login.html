@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load socialaccount static %}
 
 {% block content  %}
 
@@ -16,5 +17,10 @@
         Register
     </a>
 </button>
+                    <div class="text-center"> <!-- Add a container div with "text-center" class -->
+          <a href="{% provider_login_url 'google'%}?next=/" class="btn btn-primary loginBtn loginBtn--google">Sing Up with Google</a>
+        </div>
     </div></div></div>
+<link href="{% static 'css/registration.css' %}" rel="stylesheet">
+
 {% endblock content %}
