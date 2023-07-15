@@ -57,15 +57,14 @@ class UserForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'email', 'phone', 'username',
+        fields = ('first_name', 'last_name', 'email', 'username',
                   'password1', 'password2')
 
 
 class UserUpdateForm(forms.ModelForm):
-    phone = PhoneNumberField(required=False)
     photo = forms.ImageField(required=False)
 
     class Meta:
         model = User
         fields = ('first_name', 'last_name', 'email', 'username',
-                  'phone', 'photo')
+                  'photo')
