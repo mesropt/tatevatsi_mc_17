@@ -6,10 +6,13 @@ from django.views.generic import DetailView, ListView, UpdateView
 from authnapp.models import CustomUser
 from authnapp.forms import CustomUserEditForm, CustomUserLoginForm, CustomUserRegisterForm, UserForm as UserCreationForm, UserUpdateForm
 from helpers.mixins import LoginRequiredMixin
-
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect, get_object_or_404
+from helpers.custom_decorators import own_user
+from django.contrib import messages
 
 def login(request):
-    title = "Մուտք"
+    title = "Enter"
 
     login_form = CustomUserLoginForm(data=request.POST or None)
     if request.method == "POST" and login_form.is_valid():
@@ -74,20 +77,16 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
     form_class = UserUpdateForm
 
     def get_success_url(self):
-        return reverse('profile', kwargs={'pk': self.get_object().pk})
+        return reverse('users:profile', kwargs={'pk': self.get_object().pk})
 
-    def get_form_kwargs(self):
-        user = self.get_object()
-        kwargs = super().get_form_kwargs()
-        kwargs.update({'initial': {'phone': user.profile.phone,
-                                   'photo': user.profile.photo}})
-        return kwargs
 
-    def form_valid(self, form):
-        user = self.get_object()
-        phone = form.cleaned_data.get('phone')
-        photo = form.cleaned_data.get('photo')
-        user.profile.phone = phone
-        user.profile.photo = photo
-        user.profile.save()
-        return super().form_valid(form)
+
+@login_required
+@own_user
+def delete_user(request, pk: int):
+    user = get_object_or_404(CustomUser, pk=pk)
+    if request.method == 'POST':
+        user.delete()
+        messages.success(request, 'User was deleted successfully')
+        return redirect('home:home')
+    return render(request, 'authnapp/delete_user.html', {'user': user})
