@@ -1,12 +1,13 @@
 from django import forms
-from django.contrib.auth.forms import AuthenticationForm, UserChangeForm, UserCreationForm
-
-from .models import CustomUser
-
-from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import (
+    AuthenticationForm,
+    UserChangeForm,
+    UserCreationForm,
+)
 from django.contrib.auth.models import User
 from phonenumber_field.formfields import PhoneNumberField
+
+from .models import CustomUser
 
 
 class CustomUserLoginForm(AuthenticationForm):
@@ -27,10 +28,17 @@ class CustomUserRegisterForm(UserCreationForm):
             field.widget.attrs["class"] = "form-control"
             field.help_text = ""
 
-
     class Meta:
         model = CustomUser
-        fields = ("username", "first_name", "last_name", "password1", "password2", "email", "avatar")
+        fields = (
+            "username",
+            "first_name",
+            "last_name",
+            "password1",
+            "password2",
+            "email",
+            "avatar",
+        )
 
 
 class CustomUserEditForm(UserChangeForm):
@@ -40,12 +48,9 @@ class CustomUserEditForm(UserChangeForm):
             field.widget.attrs["class"] = "form-control"
             field.help_text = ""
 
-
     class Meta:
         model = CustomUser
         fields = ("username", "first_name", "email", "avatar")
-
-
 
 
 class UserForm(UserCreationForm):
@@ -53,12 +58,18 @@ class UserForm(UserCreationForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['email'].required = True
+        self.fields["email"].required = True
 
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'email', 'username',
-                  'password1', 'password2')
+        fields = (
+            "first_name",
+            "last_name",
+            "email",
+            "username",
+            "password1",
+            "password2",
+        )
 
 
 class UserUpdateForm(forms.ModelForm):
@@ -66,5 +77,4 @@ class UserUpdateForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'email', 'username',
-                  'photo')
+        fields = ("first_name", "last_name", "email", "username", "photo")

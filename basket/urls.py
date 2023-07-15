@@ -1,5 +1,7 @@
 from django.urls import path
+
 import basket.views as basket
+
 from .apps import BasketConfig
 
 app_name = BasketConfig.name

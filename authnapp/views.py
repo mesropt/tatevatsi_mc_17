@@ -1,15 +1,26 @@
 from django.conf import settings
-from django.contrib import auth
-from django.shortcuts import HttpResponseRedirect, render
+from django.contrib import auth, messages
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import (
+    HttpResponseRedirect,
+    get_object_or_404,
+    redirect,
+    render,
+)
 from django.urls import reverse
 from django.views.generic import DetailView, ListView, UpdateView
+
+from authnapp.forms import (
+    CustomUserEditForm,
+    CustomUserLoginForm,
+    CustomUserRegisterForm,
+)
+from authnapp.forms import UserForm as UserCreationForm
+from authnapp.forms import UserUpdateForm
 from authnapp.models import CustomUser
-from authnapp.forms import CustomUserEditForm, CustomUserLoginForm, CustomUserRegisterForm, UserForm as UserCreationForm, UserUpdateForm
-from helpers.mixins import LoginRequiredMixin
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect, get_object_or_404
 from helpers.custom_decorators import own_user
-from django.contrib import messages
+from helpers.mixins import LoginRequiredMixin
+
 
 def login(request):
     title = "Enter"
@@ -51,7 +62,7 @@ def register(request):
 
 class UserDetailView(DetailView):
     model = CustomUser
-    template_name = 'authnapp/profile.html'
+    template_name = "authnapp/profile.html"
 
 
 class UserListView(ListView):
@@ -63,16 +74,15 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
     form_class = UserUpdateForm
 
     def get_success_url(self):
-        return reverse('users:profile', kwargs={'pk': self.get_object().pk})
-
+        return reverse("users:profile", kwargs={"pk": self.get_object().pk})
 
 
 @login_required
 @own_user
 def delete_user(request, pk: int):
     user = get_object_or_404(CustomUser, pk=pk)
-    if request.method == 'POST':
+    if request.method == "POST":
         user.delete()
-        messages.success(request, 'User was deleted successfully')
-        return redirect('home:home')
-    return render(request, 'authnapp/delete_user.html', {'user': user})
+        messages.success(request, "User was deleted successfully")
+        return redirect("home:home")
+    return render(request, "authnapp/delete_user.html", {"user": user})

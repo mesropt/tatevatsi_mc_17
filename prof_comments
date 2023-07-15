@@ -1,0 +1,2 @@
+1. Use Content Type for connectic defferent models
+2. Image-ի տողում ImageField-ի փոխարեն սարքել ForeignKey, որ յոզերը մի քանի նկար ունենա

@@ -1,5 +1,7 @@
 def examination_images_storage(instance, filename):
     return f"examinations/{instance.name}/{filename}"
+
+
 #
 #
 # def producer_images_storage(instance, filename):

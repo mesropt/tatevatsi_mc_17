@@ -1,48 +1,53 @@
-from django.shortcuts import render
-from django.views.generic import TemplateView, DetailView
-from examinations.models import (Examination, MagneticResonanceImagingThreeTesla,
-                                  MagneticResonanceImagingOneFiveTesla,
-                                  ComputedTomography, XRay,
-                                  Mammography, Ultrasound)
+from django.views.generic import DetailView, TemplateView
+
+from examinations.models import (
+    ComputedTomography,
+    Examination,
+    MagneticResonanceImagingOneFiveTesla,
+    MagneticResonanceImagingThreeTesla,
+    Mammography,
+    Ultrasound,
+    XRay,
+)
 
 
 class ExaminationsListView(TemplateView):
-    template_name = 'examinations/examinations_list.html'
+    template_name = "examinations/examinations_list.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
         examination_lists = {
-            'magnetic_resonance_imaging_three_tesla': MagneticResonanceImagingThreeTesla.objects.all(),
-            'magnetic_resonance_imaging_one_five_tesla': MagneticResonanceImagingOneFiveTesla.objects.all(),
-            'computed_tomography': ComputedTomography.objects.all(),
-            'xray': XRay.objects.all(),
-            'mammography': Mammography.objects.all(),
-            'ultrasound': Ultrasound.objects.all(),
+            "magnetic_resonance_imaging_three_tesla": MagneticResonanceImagingThreeTesla.objects.all(),
+            "magnetic_resonance_imaging_one_five_tesla": MagneticResonanceImagingOneFiveTesla.objects.all(),
+            "computed_tomography": ComputedTomography.objects.all(),
+            "xray": XRay.objects.all(),
+            "mammography": Mammography.objects.all(),
+            "ultrasound": Ultrasound.objects.all(),
         }
-        context['examination_lists'] = examination_lists
+        context["examination_lists"] = examination_lists
 
         return context
 
 
 class ExaminationsDetailView(DetailView):
-    template_name = 'examinations/examination_detail.html'
-    context_object_name = 'examination'
+    template_name = "examinations/examination_detail.html"
+    context_object_name = "examination"
 
     def get_model(self):
-        examination_type = self.kwargs.get('examination_type')
+        examination_type = self.kwargs.get("examination_type")
 
-        if examination_type == 'magnetic_resonance_imaging_three_tesla':
+        if examination_type == "magnetic_resonance_imaging_three_tesla":
             return MagneticResonanceImagingThreeTesla
-        elif examination_type == 'magnetic_resonance_imaging_one_five_tesla':
+        elif examination_type == "magnetic_resonance_imaging_one_five_tesla":
             return MagneticResonanceImagingOneFiveTesla
-        elif examination_type == 'computed_tomography':
+        elif examination_type == "computed_tomography":
             return ComputedTomography
-        elif examination_type == 'xray':
+        elif examination_type == "xray":
             return XRay
-        elif examination_type == 'mammography':
+        elif examination_type == "mammography":
             return Mammography
-        elif examination_type == 'ultrasound':
+        elif examination_type == "ultrasound":
             return Ultrasound
 
     def get_queryset(self):
@@ -52,10 +57,10 @@ class ExaminationsDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        examination_type = self.kwargs.get('examination_type')
+        examination_type = self.kwargs.get("examination_type")
 
         examination_list = self.get_queryset()
-        context['examination_list'] = examination_list
+        context["examination_list"] = examination_list
 
         return context
 

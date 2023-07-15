@@ -4,9 +4,9 @@ from django.db import models
 
 class Product(models.Model):
     examination = models.ForeignKey(
-        'examinations.MagneticResonanceImagingThreeTesla',
+        "examinations.MagneticResonanceImagingThreeTesla",
         on_delete=models.CASCADE,
-        related_name="products"
+        related_name="products",
     )
     quantity = models.PositiveIntegerField(default=0)
 
@@ -18,7 +18,9 @@ class Basket(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
-        related_name="basket"
+        related_name="basket",
     )
     products = models.ManyToManyField(Product, related_name="baskets")
-    add_datetime = models.DateTimeField(verbose_name="Ավելացման ամսաթիվ", auto_now_add=True)
+    add_datetime = models.DateTimeField(
+        verbose_name="Ավելացման ամսաթիվ", auto_now_add=True
+    )

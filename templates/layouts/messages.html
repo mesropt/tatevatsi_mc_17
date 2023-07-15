@@ -1,16 +1,16 @@
 {% if messages %}
-    {% for message in messages %}
-        {% if message.tags == 'error' %}
-            <div class="alert alert-danger d-flex align-items-center" role="alert">
-        {% else %}
-        <div class="alert alert-{{ message.tags }} d-flex align-items-center" role="alert">
-        {% endif %}
-            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
-                <use xlink:href="#info-fill"/>
-            </svg>
-            <div>
-                {{ message }}
-            </div>
-        </div>
-    {% endfor %}
-{% endif %}
+{% for message in messages %}
+{% if message.tags == 'error' %}
+<div class="alert alert-danger d-flex align-items-center" role="alert">
+  {% else %}
+  <div class="alert alert-{{ message.tags }} d-flex align-items-center" role="alert">
+    {% endif %}
+    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
+      <use xlink:href="#info-fill" />
+    </svg>
+    <div>
+      {{ message }}
+    </div>
+  </div>
+  {% endfor %}
+  {% endif %}
