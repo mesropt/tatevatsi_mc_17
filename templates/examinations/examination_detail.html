@@ -16,9 +16,6 @@
                 <div class="mb-4">
                     <h1 class="display-4">{{ examination_list.0|get_class_name }}</h1>
                 </div>
-                <p>
-                    {% if examination.description %}{{ examination.description }}<br>{% endif %}
-                </p>
                 <ul>
                     Types of {{ examination_list.0|get_class_name }} made in our clinic:
                     {% for exam in examination_list %}
