@@ -249,3 +249,5 @@ fabric.properties
 *.vsix
 
 requirements.txt
+
+.env
