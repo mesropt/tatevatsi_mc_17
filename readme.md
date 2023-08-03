@@ -7,6 +7,9 @@ Educational project of a medical clinic, which was developed during training at 
 * `Python`  3.11.4
 * `Django` 3.2.19
 
+## Host
+* Heroku Address:
+
 ## License
 
 MIT
