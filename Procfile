@@ -1,0 +1,1 @@
+web gunicorn tatevatsi_mc_17.wsgi:application --log-file -

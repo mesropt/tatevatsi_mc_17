@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from dotenv import load_dotenv
 from pathlib import Path
+import django_heroku
+import dj_database_url
 
 # Load environment variables from .env file
 load_dotenv()
@@ -140,3 +142,7 @@ AUTHENTICATION_BACKENDS = [
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 LOGIN_REDIRECT_URL = '/'
+
+
+# Heroku:
+django_heroku.settings((locals()))
