@@ -1,6 +1,5 @@
 from django.urls import path
-
-import authnapp.views as authnapp
+from . import views as authnapp
 
 app_name = "users"
 
