@@ -1,5 +1,4 @@
 from django.urls import path
-
 from doctors import views
 
 app_name = "doctors"
